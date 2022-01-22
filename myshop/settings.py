@@ -97,16 +97,28 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
+    
+    #myshop     
+    'myshop.apps.users',
+    
 ]
 
 MIDDLEWARE = [
+    #cors
+    'corsheaders.middleware.CorsMiddleware',
+    
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
+    #异常处理中间件
+    'myshop.utils.middlewares.ExceptionMiddleware'
+    
 ]
 
 ROOT_URLCONF = 'myshop.urls'
@@ -191,3 +203,45 @@ STATICFILES_DIRS=[os.path.join(BASE_DIR,'myshop','static')]
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+#django-redis 配置
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/0",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    },    
+    "session": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+
+#SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+#SESSION_CACHE_ALIAS = "session"
+
+#替换内置user
+AUTH_USER_MODEL='users.User'
+
+#CORS 白名单
+
+CORS_ALLOWED_ORIGINS=(
+    'http://127.0.0.1:8000',
+    'http://localhost:8000',
+)
+
+#允许携带cookie
+CORS_ALLOW_CREDENTIALS = True
+
+#CORS_ORIGIN_ALLOW_ALL = True
+
+  
+
+
+

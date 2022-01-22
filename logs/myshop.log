@@ -1,2 +1,505 @@
 INFO 2022-01-16 21:40:56,489 autoreload 643 Watching for file changes with StatReloader
 INFO 2022-01-16 21:42:05,354 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-17 12:23:51,349 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-17 12:40:51,958 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-17 12:43:40,012 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-17 12:44:07,744 autoreload 257 G:\vscode\webproject\myshop\myshop\settings.py changed, reloading.
+INFO 2022-01-17 12:44:09,573 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-17 12:44:21,873 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-17 17:07:52,161 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\user\apps.py changed, reloading.
+INFO 2022-01-17 17:07:54,664 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-17 17:08:06,543 autoreload 257 G:\vscode\webproject\myshop\myshop\settings.py changed, reloading.
+INFO 2022-01-17 17:08:07,549 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-17 17:09:45,093 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-17 18:15:04,322 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-17 18:15:56,662 autoreload 257 G:\vscode\webproject\myshop\myshop\settings.py changed, reloading.
+INFO 2022-01-17 18:15:58,218 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-17 18:17:03,729 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-17 18:21:07,160 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:00:24,466 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:01:18,917 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:05:34,882 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:05:55,714 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:08:11,738 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:14:09,342 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:17:31,099 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:18:56,060 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:23:22,473 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\apps.py changed, reloading.
+INFO 2022-01-21 18:23:23,318 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:25:57,680 autoreload 257 G:\vscode\webproject\myshop\myshop\settings.py changed, reloading.
+INFO 2022-01-21 18:25:58,586 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:26:02,799 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:30:13,673 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:33:04,481 autoreload 257 G:\vscode\webproject\myshop\myshop\settings.py changed, reloading.
+INFO 2022-01-21 18:33:05,205 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:33:10,715 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:35:58,733 autoreload 257 G:\vscode\webproject\myshop\myshop\settings.py changed, reloading.
+INFO 2022-01-21 18:35:59,480 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:36:57,596 autoreload 257 G:\vscode\webproject\myshop\myshop\settings.py changed, reloading.
+INFO 2022-01-21 18:36:58,422 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:37:03,906 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:37:17,287 autoreload 257 G:\vscode\webproject\myshop\myshop\settings.py changed, reloading.
+INFO 2022-01-21 18:37:18,122 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:37:22,333 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:37:43,482 autoreload 257 G:\vscode\webproject\myshop\myshop\settings.py changed, reloading.
+INFO 2022-01-21 18:37:44,406 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:37:47,933 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:44:08,948 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:45:41,629 autoreload 257 G:\vscode\webproject\myshop\myshop\settings.py changed, reloading.
+INFO 2022-01-21 18:45:42,446 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:45:46,200 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:46:29,463 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:47:43,885 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:47:53,020 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:48:50,893 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\views.py changed, reloading.
+INFO 2022-01-21 18:48:51,862 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:49:07,582 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\views.py changed, reloading.
+INFO 2022-01-21 18:49:08,532 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:50:23,789 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\views.py changed, reloading.
+INFO 2022-01-21 18:50:24,664 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:50:47,532 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\views.py changed, reloading.
+INFO 2022-01-21 18:50:48,400 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:55:11,266 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\urls.py changed, reloading.
+INFO 2022-01-21 18:55:12,149 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:55:59,823 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\urls.py changed, reloading.
+INFO 2022-01-21 18:56:00,713 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 18:57:30,034 basehttp 179 "GET /admin HTTP/1.1" 301 0
+INFO 2022-01-21 18:57:32,708 basehttp 76 - Broken pipe from ('127.0.0.1', 56048)
+
+INFO 2022-01-21 18:57:33,988 basehttp 179 "GET /admin/ HTTP/1.1" 302 0
+INFO 2022-01-21 18:57:34,578 basehttp 179 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2217
+INFO 2022-01-21 18:57:34,657 basehttp 179 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2616
+INFO 2022-01-21 18:57:34,658 basehttp 179 "GET /static/admin/css/base.css HTTP/1.1" 200 19513
+INFO 2022-01-21 18:57:34,671 basehttp 179 "GET /static/admin/css/login.css HTTP/1.1" 200 954
+INFO 2022-01-21 18:57:34,674 basehttp 179 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18545
+INFO 2022-01-21 18:57:34,700 basehttp 179 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3401
+INFO 2022-01-21 18:57:34,707 basehttp 179 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO 2022-01-21 18:57:34,819 basehttp 179 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2022-01-21 18:57:34,823 basehttp 179 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+WARNING 2022-01-21 18:57:35,071 log 225 Not Found: /favicon.ico
+WARNING 2022-01-21 18:57:35,072 basehttp 179 "GET /favicon.ico HTTP/1.1" 404 2216
+INFO 2022-01-21 18:57:43,000 basehttp 179 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2347
+INFO 2022-01-21 18:57:43,066 basehttp 179 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO 2022-01-21 18:57:52,355 basehttp 179 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2347
+INFO 2022-01-21 18:58:12,038 basehttp 179 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2348
+INFO 2022-01-21 18:58:14,812 basehttp 179 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2348
+INFO 2022-01-21 19:10:45,168 autoreload 643 Watching for file changes with StatReloader
+ERROR 2022-01-21 19:10:52,648 log 225 Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "G:\python_env\myshop\lib\site-packages\django_redis\cache.py", line 31, in _decorator
+    return method(self, *args, **kwargs)
+  File "G:\python_env\myshop\lib\site-packages\django_redis\cache.py", line 137, in has_key
+    return self.client.has_key(*args, **kwargs)
+  File "G:\python_env\myshop\lib\site-packages\django_redis\client\default.py", line 666, in has_key
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. 由于目标计算机积极拒绝，无法连接。.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "G:\python_env\myshop\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "G:\python_env\myshop\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "G:\python_env\myshop\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "G:\python_env\myshop\lib\site-packages\django\views\decorators\cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "G:\python_env\myshop\lib\site-packages\django\contrib\admin\sites.py", line 417, in login
+    return LoginView.as_view(**defaults)(request)
+  File "G:\python_env\myshop\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "G:\python_env\myshop\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "G:\python_env\myshop\lib\site-packages\django\views\decorators\debug.py", line 90, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "G:\python_env\myshop\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "G:\python_env\myshop\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "G:\python_env\myshop\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "G:\python_env\myshop\lib\site-packages\django\views\decorators\cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "G:\python_env\myshop\lib\site-packages\django\contrib\auth\views.py", line 64, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "G:\python_env\myshop\lib\site-packages\django\views\generic\base.py", line 101, in dispatch
+    return handler(request, *args, **kwargs)
+  File "G:\python_env\myshop\lib\site-packages\django\views\generic\edit.py", line 144, in post
+    return self.form_valid(form)
+  File "G:\python_env\myshop\lib\site-packages\django\contrib\auth\views.py", line 96, in form_valid
+    auth_login(self.request, form.get_user())
+  File "G:\python_env\myshop\lib\site-packages\django\contrib\auth\__init__.py", line 111, in login
+    request.session.cycle_key()
+  File "G:\python_env\myshop\lib\site-packages\django\contrib\sessions\backends\base.py", line 291, in cycle_key
+    self.create()
+  File "G:\python_env\myshop\lib\site-packages\django\contrib\sessions\backends\cache.py", line 43, in create
+    self._session_key = self._get_new_session_key()
+  File "G:\python_env\myshop\lib\site-packages\django\contrib\sessions\backends\base.py", line 143, in _get_new_session_key
+    if not self.exists(session_key):
+  File "G:\python_env\myshop\lib\site-packages\django\contrib\sessions\backends\cache.py", line 70, in exists
+    return bool(session_key) and (self.cache_key_prefix + session_key) in self._cache
+  File "G:\python_env\myshop\lib\site-packages\django\core\cache\backends\base.py", line 283, in __contains__
+    return self.has_key(key)
+  File "G:\python_env\myshop\lib\site-packages\django_redis\cache.py", line 38, in _decorator
+    raise e.__cause__
+  File "G:\python_env\myshop\lib\site-packages\django_redis\client\default.py", line 664, in has_key
+    return client.exists(key) == 1
+  File "G:\python_env\myshop\lib\site-packages\redis\commands\core.py", line 1210, in exists
+    return self.execute_command("EXISTS", *names)
+  File "G:\python_env\myshop\lib\site-packages\redis\client.py", line 1170, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "G:\python_env\myshop\lib\site-packages\redis\connection.py", line 1311, in get_connection
+    connection.connect()
+  File "G:\python_env\myshop\lib\site-packages\redis\connection.py", line 611, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. 由于目标计算机积极拒绝，无法连接。.
+ERROR 2022-01-21 19:10:52,654 basehttp 179 "POST /admin/login/?next=/admin/ HTTP/1.1" 500 196841
+INFO 2022-01-21 19:12:06,877 autoreload 257 G:\vscode\webproject\myshop\myshop\settings.py changed, reloading.
+INFO 2022-01-21 19:12:07,964 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 19:12:14,659 basehttp 179 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2022-01-21 19:12:14,900 basehttp 179 "GET /admin/ HTTP/1.1" 200 2878
+INFO 2022-01-21 19:12:14,931 basehttp 179 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2616
+INFO 2022-01-21 19:12:14,932 basehttp 179 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18545
+INFO 2022-01-21 19:12:14,938 basehttp 179 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 380
+INFO 2022-01-21 19:12:14,942 basehttp 179 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3401
+INFO 2022-01-21 19:12:14,942 basehttp 179 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO 2022-01-21 19:12:15,002 basehttp 179 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2022-01-21 19:12:15,009 basehttp 179 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2022-01-21 19:12:15,012 basehttp 179 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2022-01-21 19:12:15,013 basehttp 179 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2022-01-21 19:12:15,022 basehttp 179 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO 2022-01-21 19:13:10,966 basehttp 179 "GET /admin/ HTTP/1.1" 200 2878
+INFO 2022-01-21 19:13:56,478 basehttp 179 "GET /admin/ HTTP/1.1" 200 2878
+INFO 2022-01-21 19:13:57,490 basehttp 179 "GET /admin/ HTTP/1.1" 200 2878
+INFO 2022-01-21 19:19:03,136 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\admin.py changed, reloading.
+INFO 2022-01-21 19:19:04,505 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 19:19:15,191 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\views.py changed, reloading.
+INFO 2022-01-21 19:19:16,170 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 19:19:26,349 basehttp 179 "GET /admin/ HTTP/1.1" 200 3522
+ERROR 2022-01-21 19:19:47,753 log 225 Internal Server Error: /admin/users/user/
+Traceback (most recent call last):
+  File "G:\python_env\myshop\lib\site-packages\django\db\models\options.py", line 608, in get_field
+    return self.fields_map[field_name]
+KeyError: '__str__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "G:\python_env\myshop\lib\site-packages\django\contrib\admin\utils.py", line 266, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "G:\python_env\myshop\lib\site-packages\django\contrib\admin\utils.py", line 297, in _get_non_gfk_field
+    field = opts.get_field(name)
+  File "G:\python_env\myshop\lib\site-packages\django\db\models\options.py", line 610, in get_field
+    raise FieldDoesNotExist("%s has no field named '%s'" % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: User has no field named '__str__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "G:\python_env\myshop\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "G:\python_env\myshop\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "G:\python_env\myshop\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "G:\python_env\myshop\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "G:\python_env\myshop\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "G:\python_env\myshop\lib\site-packages\django\template\base.py", line 176, in render
+    return self._render(context)
+  File "G:\python_env\myshop\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "G:\python_env\myshop\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "G:\python_env\myshop\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "G:\python_env\myshop\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "G:\python_env\myshop\lib\site-packages\django\template\loader_tags.py", line 153, in render
+    return compiled_parent._render(context)
+  File "G:\python_env\myshop\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "G:\python_env\myshop\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "G:\python_env\myshop\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "G:\python_env\myshop\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "G:\python_env\myshop\lib\site-packages\django\template\loader_tags.py", line 153, in render
+    return compiled_parent._render(context)
+  File "G:\python_env\myshop\lib\site-packages\django\template\base.py", line 168, in _render
+    return self.nodelist.render(context)
+  File "G:\python_env\myshop\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "G:\python_env\myshop\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "G:\python_env\myshop\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "G:\python_env\myshop\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "G:\python_env\myshop\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "G:\python_env\myshop\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "G:\python_env\myshop\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "G:\python_env\myshop\lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "G:\python_env\myshop\lib\site-packages\django\template\base.py", line 977, in render
+    return SafeString(''.join([
+  File "G:\python_env\myshop\lib\site-packages\django\template\base.py", line 978, in <listcomp>
+    node.render_annotated(context) for node in self
+  File "G:\python_env\myshop\lib\site-packages\django\template\base.py", line 938, in render_annotated
+    return self.render(context)
+  File "G:\python_env\myshop\lib\site-packages\django\contrib\admin\templatetags\base.py", line 33, in render
+    return super().render(context)
+  File "G:\python_env\myshop\lib\site-packages\django\template\library.py", line 215, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "G:\python_env\myshop\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 309, in result_list
+    'results': list(results(cl)),
+  File "G:\python_env\myshop\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 285, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "G:\python_env\myshop\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 276, in __init__
+    super().__init__(*items)
+  File "G:\python_env\myshop\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 201, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "G:\python_env\myshop\lib\site-packages\django\contrib\admin\utils.py", line 279, in lookup_field
+    value = attr()
+  File "G:\vscode\webproject\myshop\myshop\apps\users\models.py", line 26, in __str__
+    return self.name
+AttributeError: 'User' object has no attribute 'name'
+ERROR 2022-01-21 19:19:47,774 basehttp 179 "GET /admin/users/user/ HTTP/1.1" 500 339695
+INFO 2022-01-21 19:20:30,672 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\models.py changed, reloading.
+INFO 2022-01-21 19:20:31,605 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 19:20:33,398 basehttp 179 "GET /admin/users/user/ HTTP/1.1" 200 5938
+INFO 2022-01-21 19:20:33,534 basehttp 179 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6932
+INFO 2022-01-21 19:20:33,580 basehttp 179 "GET /admin/jsi18n/ HTTP/1.1" 200 8398
+INFO 2022-01-21 19:20:33,593 basehttp 179 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2022-01-21 19:20:33,635 basehttp 179 "GET /static/admin/js/core.js HTTP/1.1" 200 5698
+INFO 2022-01-21 19:20:33,636 basehttp 179 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 5984
+INFO 2022-01-21 19:20:33,664 basehttp 179 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7902
+INFO 2022-01-21 19:20:33,679 basehttp 179 "GET /static/admin/js/actions.js HTTP/1.1" 200 7872
+INFO 2022-01-21 19:20:33,720 basehttp 179 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2022-01-21 19:20:33,740 basehttp 179 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 288580
+INFO 2022-01-21 19:20:33,783 basehttp 179 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2022-01-21 19:20:33,896 basehttp 179 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2022-01-21 19:20:33,936 basehttp 179 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2022-01-21 19:20:36,811 basehttp 179 "GET /admin/users/user/1/change/ HTTP/1.1" 200 15475
+INFO 2022-01-21 19:20:36,875 basehttp 179 "GET /admin/jsi18n/ HTTP/1.1" 200 8398
+INFO 2022-01-21 19:20:36,908 basehttp 179 "GET /static/admin/css/forms.css HTTP/1.1" 200 8835
+INFO 2022-01-21 19:20:36,927 basehttp 179 "GET /static/admin/js/calendar.js HTTP/1.1" 200 8466
+INFO 2022-01-21 19:20:36,933 basehttp 179 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19634
+INFO 2022-01-21 19:20:36,956 basehttp 179 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 492
+INFO 2022-01-21 19:20:36,987 basehttp 179 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2022-01-21 19:20:37,016 basehttp 179 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11097
+INFO 2022-01-21 19:20:37,290 basehttp 179 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2022-01-21 19:20:37,291 basehttp 179 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+WARNING 2022-01-21 19:20:55,962 log 225 Not Found: /users/username/root
+WARNING 2022-01-21 19:20:55,962 basehttp 179 "GET /users/username/root HTTP/1.1" 404 2350
+WARNING 2022-01-21 19:22:24,759 log 225 Not Found: /users/usernamecount/root
+WARNING 2022-01-21 19:22:24,760 basehttp 179 "GET /users/usernamecount/root HTTP/1.1" 404 2365
+INFO 2022-01-21 19:22:40,495 basehttp 179 "GET /users/usernamecounts/root HTTP/1.1" 200 56
+INFO 2022-01-21 19:25:23,595 basehttp 179 "GET /admin/users/user/ HTTP/1.1" 200 5938
+INFO 2022-01-21 19:26:53,492 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\views.py changed, reloading.
+INFO 2022-01-21 19:26:54,478 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 19:30:40,181 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\views.py changed, reloading.
+INFO 2022-01-21 19:30:41,309 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 20:23:05,344 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\urls.py changed, reloading.
+INFO 2022-01-21 20:23:07,764 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 20:24:09,093 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\urls.py changed, reloading.
+INFO 2022-01-21 20:24:10,484 autoreload 643 Watching for file changes with StatReloader
+WARNING 2022-01-21 20:24:41,182 log 225 Not Found: /users/usernamecounts/root
+WARNING 2022-01-21 20:24:41,182 basehttp 179 "GET /users/usernamecounts/root HTTP/1.1" 404 2373
+INFO 2022-01-21 20:32:09,209 autoreload 257 G:\vscode\webproject\myshop\myshop\utils\convertors.py changed, reloading.
+INFO 2022-01-21 20:32:13,430 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 20:32:46,554 autoreload 257 G:\vscode\webproject\myshop\myshop\utils\convertors.py changed, reloading.
+INFO 2022-01-21 20:32:47,443 autoreload 643 Watching for file changes with StatReloader
+WARNING 2022-01-21 20:32:55,224 log 225 Not Found: /users/usernamecounts/root
+WARNING 2022-01-21 20:32:55,225 basehttp 179 "GET /users/usernamecounts/root HTTP/1.1" 404 2373
+INFO 2022-01-21 20:35:04,745 autoreload 257 G:\vscode\webproject\myshop\myshop\utils\convertors.py changed, reloading.
+INFO 2022-01-21 20:35:05,678 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 20:35:28,231 basehttp 179 "GET /users/usernamecounts/root HTTP/1.1" 200 56
+INFO 2022-01-21 20:46:16,443 autoreload 257 G:\vscode\webproject\myshop\myshop\utils\convertors.py changed, reloading.
+INFO 2022-01-21 20:46:17,753 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 20:46:20,011 basehttp 179 "GET /users/usernamecounts/root HTTP/1.1" 200 56
+INFO 2022-01-21 20:50:03,198 autoreload 257 G:\vscode\webproject\myshop\myshop\utils\convertors.py changed, reloading.
+INFO 2022-01-21 20:50:04,085 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 20:50:16,872 convertors 11 getname: root
+INFO 2022-01-21 20:50:16,876 convertors 11 getname: root
+INFO 2022-01-21 20:50:16,881 basehttp 179 "GET /users/usernamecounts/root HTTP/1.1" 200 56
+INFO 2022-01-21 20:52:36,359 autoreload 257 G:\vscode\webproject\myshop\myshop\utils\convertors.py changed, reloading.
+INFO 2022-01-21 20:52:37,219 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 22:18:55,299 autoreload 257 G:\vscode\webproject\myshop\myshop\settings.py changed, reloading.
+INFO 2022-01-21 22:18:56,671 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 22:20:13,948 autoreload 257 G:\vscode\webproject\myshop\myshop\settings.py changed, reloading.
+INFO 2022-01-21 22:20:15,342 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 22:20:18,052 autoreload 257 G:\vscode\webproject\myshop\myshop\settings.py changed, reloading.
+INFO 2022-01-21 22:20:19,125 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 22:23:50,669 autoreload 257 G:\vscode\webproject\myshop\myshop\settings.py changed, reloading.
+INFO 2022-01-21 22:23:51,689 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 22:24:39,694 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 22:25:35,764 autoreload 257 G:\vscode\webproject\myshop\myshop\settings.py changed, reloading.
+INFO 2022-01-21 22:25:45,301 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 22:26:13,498 autoreload 257 G:\vscode\webproject\myshop\myshop\settings.py changed, reloading.
+INFO 2022-01-21 22:26:14,628 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 22:42:44,461 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\views.py changed, reloading.
+INFO 2022-01-21 22:42:45,400 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 22:45:13,858 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\urls.py changed, reloading.
+INFO 2022-01-21 22:45:14,843 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 22:47:55,670 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\views.py changed, reloading.
+INFO 2022-01-21 22:47:56,592 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 23:23:41,942 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\views.py changed, reloading.
+INFO 2022-01-21 23:24:00,713 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-21 23:24:28,312 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\views.py changed, reloading.
+INFO 2022-01-21 23:24:29,657 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-22 00:21:05,908 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\views.py changed, reloading.
+INFO 2022-01-22 00:21:07,030 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-22 00:21:31,261 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\views.py changed, reloading.
+INFO 2022-01-22 00:21:44,547 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-22 00:23:21,441 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\views.py changed, reloading.
+INFO 2022-01-22 00:23:22,917 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-22 14:21:34,440 autoreload 643 Watching for file changes with StatReloader
+ERROR 2022-01-22 14:21:41,515 log 225 Internal Server Error: /users/usernamecounts/root
+Traceback (most recent call last):
+  File "G:\python_env\myshop\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "G:\python_env\myshop\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "G:\python_env\myshop\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "G:\python_env\myshop\lib\site-packages\django\views\generic\base.py", line 101, in dispatch
+    return handler(request, *args, **kwargs)
+  File "G:\vscode\webproject\myshop\myshop\apps\users\views.py", line 18, in get
+    res=R.ok().data({
+TypeError: data() takes 1 positional argument but 2 were given
+ERROR 2022-01-22 14:21:41,517 basehttp 179 "GET /users/usernamecounts/root HTTP/1.1" 500 78006
+INFO 2022-01-22 15:19:53,219 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\views.py changed, reloading.
+INFO 2022-01-22 15:19:54,607 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-22 15:20:01,598 basehttp 179 "GET /users/usernamecounts/root HTTP/1.1" 200 68
+INFO 2022-01-22 15:24:38,301 autoreload 257 G:\vscode\webproject\myshop\myshop\apps\users\views.py changed, reloading.
+INFO 2022-01-22 15:24:39,313 autoreload 643 Watching for file changes with StatReloader
+ERROR 2022-01-22 15:28:16,576 log 225 Internal Server Error: /users/register
+Traceback (most recent call last):
+  File "G:\python_env\myshop\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "G:\python_env\myshop\lib\site-packages\django\utils\deprecation.py", line 125, in __call__
+    response = self.process_request(request)
+  File "G:\python_env\myshop\lib\site-packages\django\middleware\common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "G:\python_env\myshop\lib\site-packages\django\middleware\common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/users/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2022-01-22 15:28:16,578 basehttp 179 "POST /users/register HTTP/1.1" 500 73795
+WARNING 2022-01-22 15:29:01,677 log 225 Forbidden (CSRF cookie not set.): /users/register/
+WARNING 2022-01-22 15:29:01,677 basehttp 179 "POST /users/register/ HTTP/1.1" 403 2801
+WARNING 2022-01-22 15:37:46,392 log 225 Forbidden (CSRF cookie not set.): /users/register/
+WARNING 2022-01-22 15:37:46,393 basehttp 179 "POST /users/register/ HTTP/1.1" 403 2801
+WARNING 2022-01-22 15:38:18,662 log 225 Forbidden (CSRF cookie not set.): /users/register/
+WARNING 2022-01-22 15:38:18,662 basehttp 179 "POST /users/register/ HTTP/1.1" 403 2801
+WARNING 2022-01-22 15:39:27,332 log 225 Not Found: /users/username_count/root
+WARNING 2022-01-22 15:39:27,332 basehttp 179 "GET /users/username_count/root HTTP/1.1" 404 2552
+WARNING 2022-01-22 15:39:41,152 log 225 Not Found: /users/usernamecount/root
+WARNING 2022-01-22 15:39:41,153 basehttp 179 "GET /users/usernamecount/root HTTP/1.1" 404 2549
+INFO 2022-01-22 15:39:58,024 basehttp 179 "GET /users/usernamecounts/root HTTP/1.1" 200 68
+INFO 2022-01-22 15:57:46,861 autoreload 257 G:\vscode\webproject\myshop\myshop\settings.py changed, reloading.
+INFO 2022-01-22 15:57:48,164 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-22 15:58:19,397 autoreload 257 G:\vscode\webproject\myshop\myshop\settings.py changed, reloading.
+INFO 2022-01-22 15:58:20,551 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-22 15:59:07,555 autoreload 257 G:\vscode\webproject\myshop\myshop\settings.py changed, reloading.
+INFO 2022-01-22 15:59:10,385 autoreload 643 Watching for file changes with StatReloader
+ERROR 2022-01-22 15:59:35,664 log 225 Internal Server Error: /users/register
+Traceback (most recent call last):
+  File "G:\python_env\myshop\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "G:\python_env\myshop\lib\site-packages\django\utils\deprecation.py", line 125, in __call__
+    response = self.process_request(request)
+  File "G:\python_env\myshop\lib\site-packages\django\middleware\common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "G:\python_env\myshop\lib\site-packages\django\middleware\common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/users/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2022-01-22 15:59:35,665 basehttp 179 "POST /users/register HTTP/1.1" 500 73794
+WARNING 2022-01-22 15:59:52,982 log 225 Forbidden (CSRF cookie not set.): /users/register/
+WARNING 2022-01-22 15:59:52,983 basehttp 179 "POST /users/register/ HTTP/1.1" 403 2801
+WARNING 2022-01-22 16:08:07,631 log 225 Forbidden (CSRF cookie not set.): /users/register/
+WARNING 2022-01-22 16:08:07,633 basehttp 179 "POST /users/register/ HTTP/1.1" 403 2801
+WARNING 2022-01-22 16:08:57,877 log 225 Forbidden (CSRF cookie not set.): /users/register/
+WARNING 2022-01-22 16:08:57,878 basehttp 179 "POST /users/register/ HTTP/1.1" 403 2801
+WARNING 2022-01-22 16:09:25,626 log 225 Forbidden (CSRF cookie not set.): /users/register/
+WARNING 2022-01-22 16:09:25,627 basehttp 179 "POST /users/register/ HTTP/1.1" 403 2801
+WARNING 2022-01-22 16:09:41,608 log 225 Forbidden (CSRF cookie not set.): /users/register/
+WARNING 2022-01-22 16:09:41,609 basehttp 179 "POST /users/register/ HTTP/1.1" 403 2801
+WARNING 2022-01-22 16:09:59,121 log 225 Forbidden (CSRF cookie not set.): /users/register/
+WARNING 2022-01-22 16:09:59,122 basehttp 179 "POST /users/register/ HTTP/1.1" 403 2801
+WARNING 2022-01-22 16:10:53,801 log 225 Forbidden (CSRF cookie not set.): /users/usernamecounts/root
+WARNING 2022-01-22 16:10:53,801 basehttp 179 "POST /users/usernamecounts/root HTTP/1.1" 403 2801
+WARNING 2022-01-22 16:11:06,981 log 225 Forbidden (CSRF cookie not set.): /users/usernamecounts/root
+WARNING 2022-01-22 16:11:06,982 basehttp 179 "POST /users/usernamecounts/root HTTP/1.1" 403 2801
+INFO 2022-01-22 16:11:13,026 basehttp 179 "GET /users/usernamecounts/root HTTP/1.1" 200 68
+INFO 2022-01-22 16:15:47,206 basehttp 179 "GET /users/usernamecounts/root HTTP/1.1" 200 68
+INFO 2022-01-22 16:16:14,592 basehttp 179 "GET /users/usernamecounts/root HTTP/1.1" 200 68
+INFO 2022-01-22 16:16:31,669 basehttp 179 "GET /users/usernamecounts/root HTTP/1.1" 200 68
+INFO 2022-01-22 16:20:34,842 basehttp 179 "GET /users/usernamecounts/root HTTP/1.1" 200 68
+INFO 2022-01-22 16:21:53,064 basehttp 179 "GET /users/usernamecounts/root HTTP/1.1" 200 68
+INFO 2022-01-22 16:23:17,798 autoreload 257 G:\vscode\webproject\myshop\myshop\settings.py changed, reloading.
+INFO 2022-01-22 16:23:19,339 autoreload 643 Watching for file changes with StatReloader
+ERROR 2022-01-22 16:23:42,906 log 225 Internal Server Error: /users/register
+Traceback (most recent call last):
+  File "G:\python_env\myshop\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "G:\python_env\myshop\lib\site-packages\django\utils\deprecation.py", line 125, in __call__
+    response = self.process_request(request)
+  File "G:\python_env\myshop\lib\site-packages\django\middleware\common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "G:\python_env\myshop\lib\site-packages\django\middleware\common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/users/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2022-01-22 16:23:42,906 basehttp 179 "POST /users/register HTTP/1.1" 500 73682
+ERROR 2022-01-22 16:23:51,982 log 225 Internal Server Error: /users/register/
+Traceback (most recent call last):
+  File "G:\python_env\myshop\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "G:\python_env\myshop\lib\site-packages\django\core\handlers\base.py", line 188, in _get_response
+    self.check_response(response, callback)
+  File "G:\python_env\myshop\lib\site-packages\django\core\handlers\base.py", line 309, in check_response
+    raise ValueError(
+ValueError: The view myshop.apps.users.views.view didn't return an HttpResponse object. It returned None instead.
+ERROR 2022-01-22 16:23:51,983 basehttp 179 "POST /users/register/ HTTP/1.1" 500 69322
+INFO 2022-01-22 16:29:19,447 autoreload 257 G:\vscode\webproject\myshop\myshop\settings.py changed, reloading.
+INFO 2022-01-22 16:29:20,819 autoreload 643 Watching for file changes with StatReloader
+ERROR 2022-01-22 16:29:32,149 log 225 Internal Server Error: /users/register/
+Traceback (most recent call last):
+  File "G:\python_env\myshop\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "G:\python_env\myshop\lib\site-packages\django\core\handlers\base.py", line 188, in _get_response
+    self.check_response(response, callback)
+  File "G:\python_env\myshop\lib\site-packages\django\core\handlers\base.py", line 309, in check_response
+    raise ValueError(
+ValueError: The view myshop.apps.users.views.view didn't return an HttpResponse object. It returned None instead.
+ERROR 2022-01-22 16:29:32,150 basehttp 179 "POST /users/register/ HTTP/1.1" 500 69440
+INFO 2022-01-22 16:31:24,491 autoreload 643 Watching for file changes with StatReloader
+ERROR 2022-01-22 16:31:41,334 log 225 Internal Server Error: /users/register/
+Traceback (most recent call last):
+  File "g:\python_env\myshop\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "g:\python_env\myshop\lib\site-packages\django\core\handlers\base.py", line 188, in _get_response
+    self.check_response(response, callback)
+  File "g:\python_env\myshop\lib\site-packages\django\core\handlers\base.py", line 309, in check_response
+    raise ValueError(
+ValueError: The view myshop.apps.users.views.view didn't return an HttpResponse object. It returned None instead.
+ERROR 2022-01-22 16:31:41,338 basehttp 179 "POST /users/register/ HTTP/1.1" 500 69953
+INFO 2022-01-22 16:31:58,025 autoreload 643 Watching for file changes with StatReloader
+ERROR 2022-01-22 16:32:01,120 log 225 Internal Server Error: /users/register/
+Traceback (most recent call last):
+  File "g:\python_env\myshop\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "g:\python_env\myshop\lib\site-packages\django\core\handlers\base.py", line 188, in _get_response
+    self.check_response(response, callback)
+  File "g:\python_env\myshop\lib\site-packages\django\core\handlers\base.py", line 309, in check_response
+    raise ValueError(
+ValueError: The view myshop.apps.users.views.view didn't return an HttpResponse object. It returned None instead.
+ERROR 2022-01-22 16:32:01,123 basehttp 179 "POST /users/register/ HTTP/1.1" 500 69953
+INFO 2022-01-22 16:33:02,637 autoreload 643 Watching for file changes with StatReloader
+INFO 2022-01-22 16:33:13,800 basehttp 179 "POST /users/register/ HTTP/1.1" 200 76

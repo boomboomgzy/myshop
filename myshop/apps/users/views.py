@@ -9,9 +9,9 @@ from django.views import View
 # Create your views here.
 
 
+    # /users/usernamecounts/<str:username>
 class UsernameCountView(View):
     
-    # /users/usernamecounts/<str:username>
     def get(self,req,check_username):
         #username检查
         count=User.objects.filter(username=check_username).count()
@@ -21,6 +21,7 @@ class UsernameCountView(View):
         })
         return JsonResponse(res)
         
+    # /users/register
 class RegisterView(View):
     
     def __init__(self,**kwargs):
@@ -55,7 +56,6 @@ class RegisterView(View):
             pass
         #使用 User.objects.create_user创建并保存入库（该方法对密码加入数据库时进行了加密）
         
-    # /users/register
     def post(self,req):
         #信息检查
         self.verifi_parm(req)        

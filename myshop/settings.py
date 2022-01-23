@@ -98,10 +98,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
-    
+        
     #myshop     
     'myshop.apps.users',
-    
+    'myshop.apps.verifications',   
 ]
 
 MIDDLEWARE = [
@@ -204,27 +204,43 @@ STATICFILES_DIRS=[os.path.join(BASE_DIR,'myshop','static')]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# 缓存别名
+DEFAULT_CACHE_ALIAS = 'default'
+SESSION_CACHE_ALIAS = "session"
+VERIFY_CODE_CACHE_ALIAS = 'verify_code'
+HISTORY_CACHE_ALIAS = 'history'
+CARTS_CACHE_ALIAS = 'carts'
+
 
 #django-redis 配置
 CACHES = {
-    "default": {
+    DEFAULT_CACHE_ALIAS: {
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": "redis://127.0.0.1:6379/0",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
     },    
-    "session": {
+    SESSION_CACHE_ALIAS: {
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": "redis://127.0.0.1:6379/1",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
+    },
+    VERIFY_CODE_CACHE_ALIAS: {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/2",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
     }
+    
+    
 }
 
-#SESSION_ENGINE = "django.contrib.sessions.backends.cache"
-#SESSION_CACHE_ALIAS = "session"
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+SESSION_CACHE_ALIAS = "session"
 
 #替换内置user
 AUTH_USER_MODEL='users.User'

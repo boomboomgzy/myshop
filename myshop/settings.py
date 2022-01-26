@@ -213,24 +213,27 @@ CARTS_CACHE_ALIAS = 'carts'
 
 
 #django-redis 配置
+
+REDIS_URI='redis://127.0.0.1:6379'
+
 CACHES = {
     DEFAULT_CACHE_ALIAS: {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/0",
+        "LOCATION": "{REDIS_URI}/0",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
     },    
     SESSION_CACHE_ALIAS: {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/1",
+        "LOCATION": "{REDIS_URI}/1",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
     },
     VERIFY_CODE_CACHE_ALIAS: {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/2",
+        "LOCATION": "{REDIS_URI}/2",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }

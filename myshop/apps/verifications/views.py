@@ -1,7 +1,6 @@
 from django import http
 from django.conf import settings
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render
 from django.views import View
 from django_redis import get_redis_connection
 from myshop.utils.random import random_str
@@ -9,6 +8,7 @@ from myshop.utils.enums import StatusCodeEnum
 from .libs.captcha import captcha
 from myshop.utils.result import R
 from myshop.settings import VERIFY_CODE_CACHE_ALIAS
+from myshop.celery_tasks.sms.task import celery_send_sms_code
 from myshop.utils.constants import SMS_CODE_REDIS_INTERVAL, Rediskey,IMG_CODE_REDIS_EXPIRES,rongLianYun_accId,rongLianYun_accToken,rongLianYun_appId,rongLianYun_tid,SMS_CODE_REDIS_EXPIERS
 from ronglian_sms_sdk import SmsSDK
 import logging 
@@ -54,10 +54,10 @@ class SmsCodeView(View):
             redis_cli.delete(img_code_key)
             #如果图片验证码正确，则可以发送短信验证码
             if img_code.lower()==img_code_correct.lower():
-                sdk=SmsSDK(rongLianYun_accId,rongLianYun_accToken,rongLianYun_appId)
-                tid=rongLianYun_tid
+                #sdk=SmsSDK(rongLianYun_accId,rongLianYun_accToken,rongLianYun_appId)
+                #tid=rongLianYun_tid
                 sms_code=random_str(6)
-                datas=(sms_code,SMS_CODE_REDIS_EXPIERS)
+                #datas=(sms_code,SMS_CODE_REDIS_EXPIERS)
                 sms_code_key=Rediskey.SMS_CODE_KEY.format(mobile)
                 
                 #使用redis管道，批量传输redis指令
@@ -65,8 +65,8 @@ class SmsCodeView(View):
                 p.setex(sms_code_key,SMS_CODE_REDIS_EXPIERS,sms_code)
                 p.setex(sms_send_flag_key,SMS_CODE_REDIS_INTERVAL,1)
                 p.execute()
-                sms_res=sdk.sendMessage(tid,mobile,datas)
-                logger.info('ronglianyun respond: {}'.format(sms_res))
+                #使用celery异步发送信息
+                celery_send_sms_code(mobile,sms_code)
                 
                 res=R.ok().data()
                 return JsonResponse(res)

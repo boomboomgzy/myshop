@@ -14,6 +14,12 @@ rongLianYun_appId='8aaf07087e7b9872017e865a4d16015b'
 rongLianYun_tid='1'
 
     #redis key
+    
+class CookieKey(object):
+    
+    #用户名cookie
+    USERNAME_KEY='username'
+
 class Rediskey(object):
     
     IMG_CODE_KEY='myshop_img_code_{uuid}'

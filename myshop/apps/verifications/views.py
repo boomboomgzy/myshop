@@ -26,7 +26,7 @@ class ImageCodeView(View):
         
         return http.HttpResponse(img,content_type='image/jpg')
 
-# sms_code/<mobile> 短信验证码   untest
+# sms_code/<mobile> 短信验证码   (untest)
 class SmsCodeView(View):
     
     def get(self,req,mobile):

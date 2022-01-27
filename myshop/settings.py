@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+from telnetlib import AUTHENTICATION
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 # in gzy win BASE_DIR == G:\vscode\webprojec
@@ -112,6 +113,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     #'django.middleware.csrf.CsrfViewMiddleware',
+    #'该中间件创建了匿名用户（uncheck）'
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -260,6 +262,10 @@ CORS_ALLOW_CREDENTIALS = True
 
 #CORS_ORIGIN_ALLOW_ALL = True
 
+AUTHENTICATION_BACKENDS=['myshop.utils.backend.UserNameAndEmailBackend'] 
+
+#未登录用户的默认跳转路由 
+LOGIN_URL = '/users/login' 
   
 
 

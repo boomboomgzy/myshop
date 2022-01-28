@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 from telnetlib import AUTHENTICATION
+
+import itsdangerous
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 # in gzy win BASE_DIR == G:\vscode\webprojec
@@ -113,7 +115,6 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     #'django.middleware.csrf.CsrfViewMiddleware',
-    #'该中间件创建了匿名用户（uncheck）'
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -267,6 +268,16 @@ AUTHENTICATION_BACKENDS=['myshop.utils.backend.UserNameAndEmailBackend']
 #未登录用户的默认跳转路由 
 LOGIN_URL = '/users/login' 
   
+#邮箱配置
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_FROM='myshop<3228352301@qq.com>'
+EMAIL_HOST='smtp.qq.com'
+EMAIL_PORT='465'
+EMAIL_HOST_USER='3228352301@qq.com'
+EMAIL_HOST_PASSWORD='huangjing.1314'
+# 邮箱验证链接
+EMAIL_VERIFY_URL = 'http://127.0.0.1:8000/emails/verification/'
 
 
-
+#itsdangerous密钥
+ITSDANGEROUS_SECRET_KEY='367ee6cfd1704c0b786d3407b130c8f7'

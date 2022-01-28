@@ -4,7 +4,6 @@ from django.conf import settings
 from myshop.celery_tasks.main import celery_app
 from .ronglianyun import send_sms_code
 import logging
-import myshop.settings
 
 logger=logging.getLogger(settings.LOGGER_NAME)
 
@@ -16,7 +15,7 @@ def celery_send_sms_code(self,mobile,sms_code):
     try:
         send_res=send_sms_code(mobile,sms_code)    
     except Exception as e:
-        logger.info('ronglianyun exception: {}'.format(str(e)))
+        logger.error(e)
         raise self.retry(exc=e,max_retries=3)        
 
     if not send_res:

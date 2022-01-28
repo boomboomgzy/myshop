@@ -1,17 +1,50 @@
+from asyncio.log import logger
+import imp
 import re
-from flask_login import login_url
+from django.conf import settings
+from elasticsearch import serializer
 from itsdangerous import json
 from myshop.utils.exceptions import BusinessException
 from myshop.utils.result import R
 from myshop.utils.enums import StatusCodeEnum
 from django.http import JsonResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render,reverse
 from .models import User
 from django.views import View
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.mixins import LoginRequiredMixin
-# Create your views here.
+from myshop.celery_tasks.email.task import celery_send_verify_email
+from itsdangerous.jws import TimedJSONWebSignatureSerializer as Serializer
+from myshop.utils.constants import VERIFY_EMAIL_TOKEN_EXPIRES
 
+#生成邮箱验证url
+def generate_verify_email_url(user):
+    serializer=Serializer(settings.ITSDANGEROUS_SCRETE_KEY,expire_in=VERIFY_EMAIL_TOKEN_EXPIRES)
+    data={
+        'user_id':user.id,
+        'email':user.email
+    }
+    token=serializer.dump(data).decode()
+    verify_url=settings.EMAIL_VERIFY_URL+'?token='+token
+    
+    return verify_url
+#检查邮箱验证token
+def check_verify_email_token(token):
+    serializer=Serializer(settings.ITSDANGEROUS_SCRETE_KEY,expire_in=VERIFY_EMAIL_TOKEN_EXPIRES)
+    try:
+        data=serializer.loads(token)
+    except Exception:
+        return None
+    else:
+        user_id=data.get('user_id')
+        email=data.get('email')
+        
+        try:
+            user=User.objects.get(id=user_id,email=email)
+        except User.DoesNotExist:
+            return None
+        else:
+            return user
 
     # /users/usernamecounts/<str:username>
 class UsernameCountView(View):
@@ -132,7 +165,7 @@ class UserInfoView(LoginRequiredMixin,View):
              'email_active':req.user.emal_active
          }
          
-         #返回用户信息
+         #返回用户信息且跳转到用户中心
            
 
 
@@ -156,12 +189,35 @@ class EmailView(View):
         res=R.ok().data()
         
         #异步发送验证邮件
-        
+        verify_url=generate_verify_email_url(req.user)
+        celery_send_verify_email(email,verify_url)
         
         return JsonResponse(res)
             
+ 
+ # /users/emails/verification
+class VerifyEmailView(View):
+    
+    def get(self,req):
+        token=req.GET.get('token')
+        if token is None:
+            raise BusinessException(StatusCodeEnum.NECESSARY_PARAM_ERR)
+        user = check_verify_email_token(token)
+        if user is None:
+            raise BusinessException(StatusCodeEnum.PARAM_ERR)
         
+        try:
+            user.email_active=True
+            user.save()
+        except Exception as e:
+            logger.error(e)
+            raise BusinessException(StatusCodeEnum.SERVER_ERR)
+        
+        return redirect(reverse('users:info'))
+            
         
             
-           
-            
+
+    
+    
+               

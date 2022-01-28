@@ -7,6 +7,10 @@ SMS_CODE_REDIS_EXPIERS=5
 #容联云短信发送间隔时间 单位: m
 SMS_CODE_REDIS_INTERVAL=1
 
+#邮件校验令牌过期时间 单位：S
+VERIFY_EMAIL_TOKEN_EXPIRES=10*60
+
+
 #容联云
 rongLianYun_accId='8aaf07087e7b9872017e865a4c020155'
 rongLianYun_accToken='82e0c70222324753a0c4d96e2f695257'

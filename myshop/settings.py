@@ -105,6 +105,7 @@ INSTALLED_APPS = [
     #myshop     
     'myshop.apps.users',
     'myshop.apps.verifications',   
+    'myshop.apps.areas',   
 ]
 
 MIDDLEWARE = [

@@ -17,7 +17,7 @@ class User(AbstractUser):
                                      verbose_name='邮箱验证状态')
     
     class Meta:
-        db_table='myshop_user'
+        db_table='myshop_users'
         verbose_name='用户信息'
         verbose_name_plural=verbose_name
         ordering=['id']

@@ -1,6 +1,8 @@
 from . import views
 from django.urls import path,register_converter
 from myshop.utils.convertors import MobileConverter
+
+
 app_name='verifications'
 
 

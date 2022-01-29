@@ -5,8 +5,8 @@ from django.db import models
 class Area(models.Model):
     #地址模型
     
-    name=models.CharField(max_length=20,verbose_name='详细地址')
-    parent=models.ForeignKey('self',on_delete=models.SET_NULL,null=True,verbose_name='上级行政区域')
+    name=models.CharField(max_length=20,verbose_name='名称')
+    parent=models.ForeignKey('self',on_delete=models.SET_NULL,related_name='sub_areas',null=True,verbose_name='上级行政区域')
 
     
 

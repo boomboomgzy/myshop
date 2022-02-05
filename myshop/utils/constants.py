@@ -10,6 +10,8 @@ SMS_CODE_REDIS_INTERVAL=1
 #邮件校验令牌过期时间 单位：S
 VERIFY_EMAIL_TOKEN_EXPIRES=10*60
 
+#redis地址缓存过期时间 单位：S
+MYSHOP_REDIS_AREAS_EXPIRES=3600
 
 #容联云
 rongLianYun_accId='8aaf07087e7b9872017e865a4c020155'
@@ -24,6 +26,7 @@ class CookieKey(object):
     #用户名cookie
     USERNAME_KEY='username'
 
+
 class Rediskey(object):
     
     IMG_CODE_KEY='myshop_img_code_{uuid}'
@@ -31,4 +34,9 @@ class Rediskey(object):
     SMS_CODE_KEY='myshop_sms_code_{mobile}'
     
     SMS_SEND_FLAG_KEY='myshop_sms_send_flag_{mobile}'
+
+    #省级地址数据 key
+    PROVINCES_LIST_KEY='myshop_provinces_list'
     
+    #子地址数据 key
+    SUB_AREAS_LIST_KEY='myshop_sub_areas_list_{area_id}'    

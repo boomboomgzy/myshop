@@ -26,7 +26,7 @@ class StatusCodeEnum(Enum):
     TEL_ERR = (5002, '固定电话错误')
     NODATA_ERR = (5003, '无数据')
     NEW_PWD_ERR = (5004, '新密码错误')
-    OPENID_ERR = (5005, '无效的openid')
+    ID_ERR = (5005, '无效id')
     PARAM_ERR = (5006, '参数错误')
     STOCK_ERR = (5007, '库存不足')
 

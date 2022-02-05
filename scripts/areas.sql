@@ -1,3 +1,4 @@
+use myshop;
 INSERT INTO `myshop_areas` VALUES ('110000', '北京市', NULL);
 INSERT INTO `myshop_areas` VALUES ('110100', '北京市', '110000');
 INSERT INTO `myshop_areas` VALUES ('110101', '东城区', '110100');

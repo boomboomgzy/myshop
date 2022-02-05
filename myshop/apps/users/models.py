@@ -1,12 +1,29 @@
-from tabnanny import verbose
-from tkinter.tix import MAX
-from typing import OrderedDict
 from django.db import models
+from myshop.apps.areas.models import Area
 from django.contrib.auth.models import AbstractUser
-# Create your models here.
+
+
+class Address(models.Model):
+      #收货地址信息
+      user=models.ForeignKey('users.user',verbose_name="所属用户",related_name='addresses',on_delete=models.CASCADE,null=True)
+      title=models.CharField(max_length=20,verbose_name='标识')  
+      receiver=models.CharField(max_length=20,verbose_name='收件人')
+      province=models.ForeignKey(Area,verbose_name="省",related_name='addresses_by_province',on_delete=models.PROTECT,null=True)
+      city=models.ForeignKey(Area,on_delete=models.PROTECT,related_name='addresses_by_city',null=True,verbose_name='市')
+      county=models.ForeignKey(Area,on_delete=models.PROTECT,related_name='addresses_by_county',null=True,verbose_name='区')
+      place=models.CharField(max_length=50,verbose_name='详细地址')
+      mobile=models.CharField(max_length=11,verbose_name='收件人手机')
+      tel=models.CharField(max_length=20,verbose_name='固定电话',null=True)
+      is_deleted=models.BooleanField(default=False,verbose_name='删除标识')
+      
+      class Meta:
+          db_table='myshop_addresses'
+          verbose_name='收货地址'
+          verbose_name_plural=verbose_name
+
 
 class User(AbstractUser):
-    """自定义用户模型"""
+    #自定义用户模型
     
     mobile=models.CharField(
         max_length=11,
@@ -16,6 +33,8 @@ class User(AbstractUser):
     email_active=models.BooleanField(default=False,
                                      verbose_name='邮箱验证状态')
     
+    default_address=models.ForeignKey(Address,null=True,on_delete=models.SET_NULL,related_name='default_address',verbose_name='详细地址')
+    
     class Meta:
         db_table='myshop_users'
         verbose_name='用户信息'
@@ -24,4 +43,5 @@ class User(AbstractUser):
         
     def __str__(self):
         return self.username
-        
+
+

@@ -1,15 +1,18 @@
 from asyncio.log import logger
 import imp
+from pickle import NONE
 import re
+from turtle import title
 from django.conf import settings
 from elasticsearch import serializer
 from itsdangerous import json
+from sqlalchemy import delete, false
 from myshop.utils.exceptions import BusinessException
 from myshop.utils.result import R
 from myshop.utils.enums import StatusCodeEnum
 from django.http import JsonResponse
 from django.shortcuts import redirect, render,reverse
-from .models import User
+from .models import Address, User
 from django.views import View
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -46,11 +49,10 @@ def check_verify_email_token(token):
         else:
             return user
 
-    # /users/usernamecounts/<str:username>
+    # /users/usernamecounts/<username>
 class UsernameCountView(View):
     
     def get(self,req,check_username):
-        #username检查
         count=User.objects.filter(username=check_username).count()
         
         res=R.ok().data(**{
@@ -168,6 +170,46 @@ class UserInfoView(LoginRequiredMixin,View):
          #返回用户信息且跳转到用户中心
            
 
+# /users/password (unfinish)
+class UserPasswordView(View):
+    
+    def get(self,req):
+        #跳转到修改密码页面
+        pass
+    
+    def put(self,req):
+        json_dict=json.loads(req.body.decode())
+        old_password=json_dict.get('old_password')
+        new_password=json_dict.get('new_password')
+        new_password2=json_dict.get('new_password2')
+        
+        if not all([old_password,new_password,new_password2]):
+            raise BusinessException(StatusCodeEnum.NECESSARY_PARAM_ERR)
+        
+        if not req.user.check_password(old_password):
+            raise BusinessException(StatusCodeEnum.PWD_ERR)
+        
+        if not re.match(r'^[0-9A-Za-z]{8,20}$', new_password):
+            raise BusinessException(StatusCodeEnum.NEW_PWD_ERR)
+        
+        if not new_password==new_password2:
+            raise BusinessException(StatusCodeEnum.CPWD_ERR)       
+        
+        try:
+            req.user.set_password(new_password)
+            req.user.save()
+        except Exception as e:
+            logger.error(e)
+            raise BusinessException(StatusCodeEnum.DB_ERR)
+        
+        logout(req)
+        #重定向到登录界面
+        
+        
+        
+        
+        
+        
 
         
      # /users/emails       
@@ -215,9 +257,198 @@ class VerifyEmailView(View):
         
         return redirect(reverse('users:info'))
             
-        
-            
+# /users/addresses     
+class AddressView(View):
+    #获取用户收货地址
+    def get(self,req):
+        addresses=Address.objects.filter(user=req.user,is_deleted=False)
+        res_addresses_list=[]
+        for address in addresses:
+            address_dict={
+                "id": address.id,
+                "title": address.title,
+                "receiver": address.receiver,
+                "province": address.province.name,
+                "city": address.city.name,
+                "county": address.county.name,
+                "place": address.place,
+                "mobile": address.mobile,
+                "tel": address.tel,
+                "email": address.email
+        }
+        #默认地址总是第一个显示              
+        if req.user.default_address.id==address.id:
+           res_addresses_list.insert(0,address)
+        else:
+           res_addresses_list.append(address)
+           
+        res=R.ok().data(**{
+            'default_address_id':req.user.default_address.id,
+            'addresses':res_addresses_list
+        })
 
+        return JsonResponse(res)    
+        
+# /users/addresses/create
+class CreateAddressView(View):
     
+    def post(self,req):
+        # 接收参数
+        receiver = req.GET.get('receiver')
+        province_id = req.GET.get('province_id')
+        city_id = req.GET.get('city_id')
+        county_id = req.GET.get('county_id')
+        place = req.GET.get('place')
+        mobile = req.GET.get('mobile')
+        tel = req.GET.get('tel')
+        email = req.GET.get('email')
     
-               
+        if not all([receiver,province_id,city_id,county_id,place,mobile]):
+            raise BusinessException(StatusCodeEnum.NECESSARY_PARAM_ERR)
+        if not re.match(r'^1[0-9]{10}$',mobile):
+            raise BusinessException(StatusCodeEnum.MOBILE_ERR)
+        if tel:
+            if not re.match(r'^(0[0-9]{2,3}-)?([2-9][0-9]{6,7})+(-[0-9]{1,4})?$',tel):
+                raise BusinessException(StatusCodeEnum.TEL_ERR)
+        if email:
+            if not re.match(r'^[a-z0-9][\w\.\-]*@[a-z0-9\-]+(\.[a-z]{2,5}){1,2}$', email):
+                raise BusinessException(StatusCodeEnum.EMAIL_ERR)
+        
+        #创建地址对象并保存入库
+        address=Address.objects.create(
+            user=req.user,
+            title=receiver,
+            receiver=receiver,
+        )
+        
+        #如果无默认地址，则将其设为默认地址
+        if not req.user.default_address:
+            req.user.default_address=address
+            req.user.save()
+        
+        #返回该地址数据
+        address_dict={
+            "id": address.id,
+            "title": address.title,
+            "receiver": address.receiver,
+            "province": address.province.name,
+            "city": address.city.name,
+            "county": address.county.name,
+            "place": address.place,
+            "mobile": address.mobile,
+            "tel": address.tel,
+            "email": address.email
+        }
+        
+        res=R.ok().data(**{
+            'address':address_dict
+        })
+        
+        return JsonResponse(res)
+        
+
+# /users/addresses/<address_id>       
+class UpdateOrDeleteAddressView(View):
+    
+    def put(self,req,address_id):
+        
+        json_dict=json.loads(req.body.decode())
+        receiver = json_dict.get('receiver')
+        province_id = json_dict.get('province_id')
+        city_id = json_dict.get('city_id')
+        county_id = json_dict.get('county_id')
+        place = json_dict.get('place')
+        mobile = json_dict.get('mobile')
+        tel = json_dict.get('tel')
+        email = json_dict.get('email')
+        
+        if not all([receiver,province_id,city_id,county_id,place,mobile]):
+            raise BusinessException(StatusCodeEnum.NECESSARY_PARAM_ERR)
+        if not re.match(r'^1[0-9]{10}$',mobile):
+            raise BusinessException(StatusCodeEnum.MOBILE_ERR)
+        if tel:
+            if not re.match(r'^(0[0-9]{2,3}-)?([2-9][0-9]{6,7})+(-[0-9]{1,4})?$',tel):
+                raise BusinessException(StatusCodeEnum.TEL_ERR)
+        if email:
+            if not re.match(r'^[a-z0-9][\w\.\-]*@[a-z0-9\-]+(\.[a-z]{2,5}){1,2}$', email):
+                raise BusinessException(StatusCodeEnum.EMAIL_ERR)
+        
+        if not Address.objects.get(id=address_id):
+            raise BusinessException(StatusCodeEnum.ID_ERR)
+        
+        address=Address.objects.filter(id=address_id)
+        address.update(
+            user=req.user,
+            title=receiver,
+            receiver=receiver,
+            province_id=province_id,
+            city_id=city_id,
+            county_id=county_id,
+            place=place,
+            mobile=mobile,
+            tel=tel,
+            email=email
+        )
+        
+        address_dict={
+        "id": address.id,
+        "title": address.title,
+        "receiver": address.receiver,
+        "province": address.province.name,
+        "city": address.city.name,
+        "county": address.county.name,
+        "place": address.place,
+        "mobile": address.mobile,
+        "tel": address.tel,
+        "email": address.email
+            }
+        
+        res=R.ok().data(**{
+            'address':address_dict
+        })
+        
+        return JsonResponse(res)
+        
+    def delete(self,req,address_id):
+        try:
+            address=Address.objects.get(id=address_id)
+            address.update(is_deleted=True)
+        except Exception as e:
+            logger.error(e)
+            raise BusinessException(StatusCodeEnum.DB_ERR)
+        else:
+            res=R.ok().data()
+            return JsonResponse(res)
+        
+# /users/addresses/<address_id>/default
+class DefaultAddressView(View):
+    
+    def put(self,req,address_id):
+        try:
+            address=Address.objects.get(id=address_id)
+            req.user.default_address=address
+            req.user.save()
+        except Exception as e:
+            logger.error(e)
+            raise BusinessException(StatusCodeEnum.DB_ERR)
+        else:
+            res=R.ok().data()
+            return JsonResponse(res)
+
+# /users/addresses/<address_id>/title
+class UpdateTitleAddressView(View):
+    def put(self,req,address_id):
+        json_dict=json.loads(req.body.decode())
+        title=json_dict.get('title')
+        try:
+            address=Address.objects.get(id=address_id)
+            address.title=title
+            address.save()
+        except Exception as e:
+            logger.error(e)
+            raise BusinessException(StatusCodeEnum.DB_ERR)
+        else:
+            res=R.ok().data()
+            return JsonResponse(res)
+        
+        

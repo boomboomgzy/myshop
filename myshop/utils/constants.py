@@ -13,11 +13,37 @@ VERIFY_EMAIL_TOKEN_EXPIRES=10*60
 #redis地址缓存过期时间 单位：S
 MYSHOP_REDIS_AREAS_EXPIRES=3600
 
+#minio url过期时间 单位：S
+MINIO_URL_EXPIERS=60*60*24
+
 #容联云
 rongLianYun_accId='8aaf07087e7b9872017e865a4c020155'
 rongLianYun_accToken='82e0c70222324753a0c4d96e2f695257'
 rongLianYun_appId='8aaf07087e7b9872017e865a4d16015b'
 rongLianYun_tid='1'
+
+#minio 
+minio_AccessKey='minio'
+minio_SecretKey='minio@123'
+minio_Bucket='myshop'
+
+# order 
+
+#订单状态词典
+ORDER_STATUS={
+    'CANCELED':0,
+    'UNPAID':1,
+    'UNSEND':2,
+    'UNRECEIVED':3,
+    'UNCOMMENT':4,
+    'FINISHED':5
+}
+#订单支付手段词典
+ORDER_PAY_METHOD={
+    'CASH':1,
+    'ALIPAY':2
+}
+
 
     #redis key
     

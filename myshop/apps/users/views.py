@@ -1,12 +1,6 @@
-from asyncio.log import logger
-import imp
-from pickle import NONE
 import re
-from turtle import title
 from django.conf import settings
-from elasticsearch import serializer
 from itsdangerous import json
-from sqlalchemy import delete, false
 from myshop.utils.exceptions import BusinessException
 from myshop.utils.result import R
 from myshop.utils.enums import StatusCodeEnum
@@ -19,6 +13,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from myshop.celery_tasks.email.task import celery_send_verify_email
 from itsdangerous.jws import TimedJSONWebSignatureSerializer as Serializer
 from myshop.utils.constants import VERIFY_EMAIL_TOKEN_EXPIRES
+import logging
+
+logger=logging.getLogger(settings.LOGGER_NAME)
 
 #生成邮箱验证url
 def generate_verify_email_url(user):

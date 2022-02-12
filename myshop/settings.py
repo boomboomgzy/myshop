@@ -12,12 +12,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
-from telnetlib import AUTHENTICATION
 
-import itsdangerous
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-# in gzy win BASE_DIR == G:\vscode\webprojec
+# in gzy win BASE_DIR == G:\vscode\webproject
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -105,7 +103,11 @@ INSTALLED_APPS = [
     #myshop     
     'myshop.apps.users',
     'myshop.apps.verifications',   
-    'myshop.apps.areas',   
+    'myshop.apps.areas',
+    'myshop.apps.contents',   
+    'myshop.apps.goods',   
+    'myshop.apps.payment',
+    'myshop.apps.order',
 ]
 
 MIDDLEWARE = [
@@ -282,3 +284,26 @@ EMAIL_VERIFY_URL = 'http://127.0.0.1:8000/emails/verification/'
 
 #itsdangerous密钥
 ITSDANGEROUS_SECRET_KEY='367ee6cfd1704c0b786d3407b130c8f7'
+
+#minio服务url
+MINIO_URL='http://127.0.0.1:9000'
+
+# alipay 沙箱 appid
+ALIPAY_APPID='2021000119612597'
+
+#app私钥路径
+APP_PRIVATE_KEY_PATH=os.path.join(BASE_DIR,'myshop\myshop\apps\payment\keys\myshop_private_key.pem')
+
+#app公钥路径
+APP_PUBLIC_KEY_PATH=os.path.join(BASE_DIR,'myshop\myshop\apps\payment\keys\myshop_public_key.pem')
+
+#alipay公钥路径
+ALIPAY_PUBLIC_KEY_PATH=os.path.join(BASE_DIR,'myshop\myshop\apps\payment\keys\alipay_public_key.pem')
+
+#alipay 沙箱调试模式开关
+ALIPAY_DEBUG=True
+
+# alipay页面url
+ALIPAY_URL='https://openapi.alipaydev.com/gateway.do'
+# alipay 支付完成后回调的url
+ALIPAY_RETURN_URL='http://localhost:8000/payment/status'

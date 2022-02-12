@@ -29,7 +29,8 @@ class StatusCodeEnum(Enum):
     ID_ERR = (5005, '无效id')
     PARAM_ERR = (5006, '参数错误')
     STOCK_ERR = (5007, '库存不足')
-
+    BAD_REQ_ERR=(5008,'非法请求')
+    
     @property
     def code(self):
         """获取状态码"""

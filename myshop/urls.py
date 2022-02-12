@@ -22,5 +22,9 @@ urlpatterns = [
     path('users/',include('myshop.apps.users.urls')),
     path('',include('myshop.apps.verifications.urls')),
     path('',include('myshop.apps.areas.urls')),
+    path('',include('myshop.apps.payment.urls')),
+    path('',include('myshop.apps.contents.urls')),  
+    path('',include('myshop.apps.goods.urls')),
+    path('',include('myshop.apps.order.urls')),    
     
 ]

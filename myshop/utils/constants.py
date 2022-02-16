@@ -45,7 +45,6 @@ ORDER_PAY_METHOD={
 }
 
 
-    #redis key
     
 class CookieKey(object):
     
@@ -66,3 +65,17 @@ class Rediskey(object):
     
     #子地址数据 key
     SUB_AREAS_LIST_KEY='myshop_sub_areas_list_{area_id}'    
+    
+    #用户购物车数据 key
+    USER_CARTS_KEY='myshop_carts_{user_id}'
+
+#REDIS 购物车数据示例
+'''
+'USER_CARTS_KEY':{
+    'sku.id':{
+        'count':5,
+        'selected':'True'  #True标识选中,False表示未选中
+    }
+}
+'''  
+    

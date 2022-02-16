@@ -8,14 +8,14 @@ from django.conf import settings
 import logging
 from alipay import AliPay
 from django.views import View
-from myshop.apps.order.models import Order
+from myshop.apps.orders.models import Order
 from myshop.settings import ALIPAY_RETURN_URL
 from myshop.utils.constants import ORDER_STATUS
 
 
 logger=logging.getLogger(settings.LOGGER_NAME)
 
-#´´½¨alipay¿Í»§¶Ë
+#åˆ›å»ºalipayå®¢æˆ·ç«¯
 def create_alipaycli():
     with open(settings.ALIPAY_PUBLIC_KEY_PATH,mode='r') as f:
         alipay_public_key=f.read()
@@ -35,12 +35,12 @@ def create_alipaycli():
 
 # /payment/<order_id>
 class PaymentView(View):
-    #Ö§¸¶¶©µ¥
+    #æ”¯ä»˜è®¢å•
     def get(self,req,order_id):
         """
 
         Args:
-            order_id : ¶©µ¥ºÅ
+            order_id : è®¢å•å·
         """
         try:
             order=Order.objects.get(pk=order_id)
@@ -68,29 +68,29 @@ class PaymentView(View):
         
 # /payment/status
 class PaymentStatusView(View):
-    #²éÑ¯²¢¸üĞÂ¶©µ¥×´Ì¬
+    #æŸ¥è¯¢å¹¶æ›´æ–°è®¢å•çŠ¶æ€
     def get(self,req):
-        #»ñÈ¡²ÎÊı´Êµä
+        #è·å–å‚æ•°è¯å…¸
         query_dict=req.GET.dict()
         sign=query_dict.pop('sign')
         
         alipay=create_alipaycli()
-        #Ğ£Ñé£¬È·±£¸ÃÇëÇóÊÇÖ§¸¶±¦·¢¸øÎÒÃÇ
+        #æ ¡éªŒï¼Œç¡®ä¿è¯¥è¯·æ±‚æ˜¯æ”¯ä»˜å®å‘ç»™æˆ‘ä»¬
         success=alipay.verify(query_dict,sign)
         
         if success:
             order_id=query_dict['out_trade_no']
             trade_id=query_dict['trade_no']
             
-            #±£´æÖ§¸¶ĞÅÏ¢
+            #ä¿å­˜æ”¯ä»˜ä¿¡æ¯
             Payment.objects.create(
                 order_id=order_id,
                 trade_id=trade_id
             ) 
             
-            #ĞŞ¸Ä¶©µ¥×´Ì¬
+            #ä¿®æ”¹è®¢å•çŠ¶æ€
             Order.objects.filter(pk=order_id).update(status=ORDER_STATUS['UNCOMMENT'])
             
-            #Ö§¸¶³É¹¦ ÏìÓ¦ĞÅÏ¢
+            #æ”¯ä»˜æˆåŠŸ å“åº”ä¿¡æ¯
         else:
             raise BusinessException(StatusCodeEnum.BAD_REQ_ERR)    

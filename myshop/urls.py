@@ -25,6 +25,7 @@ urlpatterns = [
     path('',include('myshop.apps.payment.urls')),
     path('',include('myshop.apps.contents.urls')),  
     path('',include('myshop.apps.goods.urls')),
-    path('',include('myshop.apps.order.urls')),    
+    path('',include('myshop.apps.orders.urls')),    
+    path('',include('myshop.apps.carts.urls')),    
     
 ]

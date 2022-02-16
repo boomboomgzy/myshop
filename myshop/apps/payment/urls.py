@@ -1,4 +1,4 @@
-from payment import views
+from myshop.apps.payment import views
 from django.urls import path
 
 app_name='payment'

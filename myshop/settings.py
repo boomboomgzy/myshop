@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 # in gzy win BASE_DIR == G:\vscode\webproject
@@ -70,7 +71,7 @@ LOGGING = {
 
             # 日志文件的位置
             'filename': os.path.join(BASE_DIR,'logs/myshop.log'),
-            'encoding': 'utf-8',
+            'encoding': 'gbk',
             'maxBytes': 300 * 1024 * 1024,
             'backupCount': 10,
             'formatter': 'verbose'
@@ -107,7 +108,8 @@ INSTALLED_APPS = [
     'myshop.apps.contents',   
     'myshop.apps.goods',   
     'myshop.apps.payment',
-    'myshop.apps.order',
+    'myshop.apps.orders',
+    'myshop.apps.carts',
 ]
 
 MIDDLEWARE = [
@@ -240,6 +242,13 @@ CACHES = {
     VERIFY_CODE_CACHE_ALIAS: {
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": f"{REDIS_URI}/2",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    },
+    CARTS_CACHE_ALIAS:{
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": f"{REDIS_URI}/3",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }

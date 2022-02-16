@@ -1,15 +1,15 @@
-from tabnanny import verbose
 from django.db import models
 from myshop.utils.models import ExtendModel
-from myshop.apps.order.models import  Order
-#Ö§¸¶ĞÅÏ¢
+from myshop.apps.orders.models import  Order
+
+#æ”¯ä»˜ä¿¡æ¯
 class Payment(ExtendModel):
-    order=models.ForeignKey(Order,on_delete=models.CASCADE,verbose_name='¶©µ¥')
-    #½»Ò×Á÷Ë®ºÅ
-    trade_id=models.CharField(max_length=100,unique=True,null=True,verbose_name='½»Ò×Á÷Ë®ºÅ')
+    order=models.ForeignKey(Order,on_delete=models.CASCADE,verbose_name='è®¢å•')
+    #äº¤æ˜“æµæ°´å·
+    trade_id=models.CharField(max_length=100,unique=True,null=True,verbose_name='äº¤æ˜“æµæ°´å·')
     
     class Meta:
         db_table='myshop_payment'
-        verbose_name='Ö§¸¶ĞÅÏ¢'
+        verbose_name='æ”¯ä»˜ä¿¡æ¯'
         verbose_name_plural=verbose_name
         

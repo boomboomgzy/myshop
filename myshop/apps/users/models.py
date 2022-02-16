@@ -1,9 +1,10 @@
 from django.db import models
 from myshop.apps.areas.models import Area
 from django.contrib.auth.models import AbstractUser
+from myshop.utils.models import ExtendModel
 
 
-class Address(models.Model):
+class Address(ExtendModel):
       #收货地址信息
       user=models.ForeignKey('users.user',verbose_name="所属用户",related_name='addresses',on_delete=models.CASCADE,null=True)
       title=models.CharField(max_length=20,verbose_name='标识')  
@@ -18,6 +19,7 @@ class Address(models.Model):
       
       class Meta:
           db_table='myshop_addresses'
+          ordering='-update_time'
           verbose_name='收货地址'
           verbose_name_plural=verbose_name
 

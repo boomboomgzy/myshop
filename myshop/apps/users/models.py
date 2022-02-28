@@ -19,7 +19,7 @@ class Address(ExtendModel):
       
       class Meta:
           db_table='myshop_addresses'
-          ordering='-update_time'
+          ordering=['-update_time']
           verbose_name='收货地址'
           verbose_name_plural=verbose_name
 

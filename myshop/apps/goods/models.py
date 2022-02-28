@@ -14,6 +14,17 @@ class GoodsCategory(ExtendModel):
     def __str__(self):
         return self.name
     
+class GoodsChannelGroup(ExtendModel):
+    """商品频道组"""
+    name = models.CharField(max_length=20, verbose_name='频道组名')
+
+    class Meta:
+        db_table = 'myshop_channel_group'
+        verbose_name = '商品频道组'
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.name
  
 class GoodsChannel(ExtendModel):
     #商品频道 
@@ -64,6 +75,19 @@ class Goods(ExtendModel):
     sale_count=models.IntegerField(default=0,verbose_name='销量')
     #该商品评论数
     comment_count=models.IntegerField(default=0,verbose_name='评论数')
+    desc_detail = models.TextField(default='', verbose_name='详细介绍')
+    desc_pack = models.TextField(default='', verbose_name='包装信息')
+    desc_service = models.TextField(default='', verbose_name='售后服务')
+    
+    class Meta:
+        db_table = 'myshop_goods'
+        verbose_name = 'SPU'
+        verbose_name_plural = verbose_name
+        ordering = ['id']
+
+    def __str__(self):
+        return self.name
+    
     
 class GoodsSpecification(ExtendModel):
     #商品的规格 如：颜色、尺寸
@@ -121,6 +145,7 @@ class SKU(ExtendModel):
         db_table='myshop_sku'
         verbose_name='sku'
         verbose_name_plural=verbose_name
+        ordering=['-id']
     
     def __str__(self):
         return self.name
@@ -146,7 +171,7 @@ class SKUSpecification(ExtendModel):
     option = models.ForeignKey(SpecificationOption, on_delete=models.PROTECT, verbose_name='规格值')
 
     class Meta:
-        db_table = 'tb_sku_specification'
+        db_table = 'myshop_sku_specification'
         verbose_name = 'SKU规格'
         verbose_name_plural = verbose_name
 

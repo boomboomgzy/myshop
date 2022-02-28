@@ -110,6 +110,7 @@ INSTALLED_APPS = [
     'myshop.apps.payment',
     'myshop.apps.orders',
     'myshop.apps.carts',
+    'myshop.apps.oauth',
 ]
 
 MIDDLEWARE = [

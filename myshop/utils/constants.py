@@ -33,7 +33,7 @@ minio_Bucket='myshop'
 ORDER_STATUS={
     'CANCELED':0,
     'UNPAID':1,
-    'UNSEND':2,
+    'UNSEND':2,#未提交
     'UNRECEIVED':3,
     'UNCOMMENT':4,
     'FINISHED':5
@@ -44,7 +44,12 @@ ORDER_PAY_METHOD={
     'ALIPAY':2
 }
 
+#运费
+ORDER_FREIGHT='10.00'
 
+
+#订单每页显示5条
+ORDER_SHOW_LIMIT=5
     
 class CookieKey(object):
     

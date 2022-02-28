@@ -23,9 +23,8 @@ urlpatterns = [
     path('',include('myshop.apps.verifications.urls')),
     path('',include('myshop.apps.areas.urls')),
     path('',include('myshop.apps.payment.urls')),
-    path('',include('myshop.apps.contents.urls')),  
-    path('',include('myshop.apps.goods.urls')),
     path('',include('myshop.apps.orders.urls')),    
-    path('',include('myshop.apps.carts.urls')),    
+    path('',include('myshop.apps.carts.urls')),   
+    path('',include('myshop.apps.oauth.urls')),
     
 ]

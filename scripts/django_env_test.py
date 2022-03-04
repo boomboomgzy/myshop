@@ -12,10 +12,7 @@ django.setup()
 
 from myshop.apps.goods.models import SKU
 
-skus=SKU.objects.all()
-print(skus)
-print(skus)
-print(connection.queries)
+
 
 
 

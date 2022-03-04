@@ -11,7 +11,7 @@ from myshop.utils.enums import StatusCodeEnum
 from myshop.utils.result import R
 from myshop.utils.exceptions import BusinessException
 from myshop.utils.constants import CookieKey,USERNAME_COOKIE_EXPIRES
-from baidu_api import *
+from .baidu_api import *
 from django_redis import get_redis_connection
 
 # /baidu/login/

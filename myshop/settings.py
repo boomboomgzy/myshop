@@ -72,7 +72,7 @@ LOGGING = {
             # 日志文件的位置
             'filename': os.path.join(BASE_DIR,'logs/myshop.log'),
             'encoding': 'gbk',
-            'maxBytes': 300 * 1024 * 1024,
+            'maxBytes': 30 * 1024,
             'backupCount': 10,
             'formatter': 'verbose'
         },

@@ -30,7 +30,6 @@ class GoodsChannel(ExtendModel):
     #商品频道 
     
     group_id=models.IntegerField(verbose_name='组号')
-    #频道即为商品的一级分类
     category=models.ForeignKey(GoodsCategory,on_delete=models.CASCADE)
     url=models.CharField(max_length=50,verbose_name='频道页面')
     sequence=models.IntegerField(verbose_name='组内序号')

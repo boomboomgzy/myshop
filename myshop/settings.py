@@ -100,7 +100,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
-        
     #myshop     
     'myshop.apps.users',
     'myshop.apps.verifications',   
@@ -208,6 +207,14 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS=[os.path.join(BASE_DIR,'myshop','static')]
 
+DEFAULT_FILE_STORAGE='myshop.utils.minio.minio_storage.MinioStorage'
+
+#minio 
+MINIO_URL='127.0.0.1:9000'
+MINIO_ACCESSKEY='minio'
+MINIO_SECRETKEY='minio@123'
+MINIO_BUCKETNAME='myshop'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -253,7 +260,7 @@ CACHES = {
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
-    }
+    },
     
     
 }
@@ -295,8 +302,6 @@ EMAIL_VERIFY_URL = 'http://127.0.0.1:8000/emails/verification/'
 #itsdangerous密钥
 ITSDANGEROUS_SECRET_KEY='367ee6cfd1704c0b786d3407b130c8f7'
 
-#minio服务url
-MINIO_URL='http://127.0.0.1:9000'
 
 # alipay 沙箱 appid
 ALIPAY_APPID='2021000119612597'
@@ -317,3 +322,17 @@ ALIPAY_DEBUG=True
 ALIPAY_URL='https://openapi.alipaydev.com/gateway.do'
 # alipay 支付完成后回调的url
 ALIPAY_RETURN_URL='http://localhost:8000/payment/status'
+
+
+#baidu API_KEY
+BAIDU_API_KEY='RevevWVQYGKp2zevbBAvdo7A'
+#baidu SECRET_KEY
+BAIDU_SECRET_KEY='viTPvS11G2kEKhkvwxxEaxilyTvGy37G'
+#baidu 处理百度登录uri
+BAIDU_REDIRECT_URI='http://localhost:8000/baidu/oauth_backend/'
+#baidu scope参数
+BAIDU_SCOPE='basic'
+#baidu登录页
+BAIDU_LOGIN_URL=f'https://openapi.baidu.com/oauth/2.0/authorize?response_type=CODE&client_id={BAIDU_API_KEY}&redirect_uri={BAIDU_REDIRECT_URI}&scope={BAIDU_SCOPE}'
+
+

@@ -1,3 +1,4 @@
 test.py
 logs/myshop.log
 .vscode
+django_env_test.py

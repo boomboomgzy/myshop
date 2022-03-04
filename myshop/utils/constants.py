@@ -22,10 +22,9 @@ rongLianYun_accToken='82e0c70222324753a0c4d96e2f695257'
 rongLianYun_appId='8aaf07087e7b9872017e865a4d16015b'
 rongLianYun_tid='1'
 
-#minio 
-minio_AccessKey='minio'
-minio_SecretKey='minio@123'
-minio_Bucket='myshop'
+#显示货物时每页5条记录
+GOODS_LIST_LIMIT=5
+
 
 # order 
 
@@ -46,11 +45,93 @@ ORDER_PAY_METHOD={
 
 #运费
 ORDER_FREIGHT='10.00'
-
-
 #订单每页显示5条
 ORDER_SHOW_LIMIT=5
-    
+#baidu openid加密token有效时间 单位:s
+BAIDU_MYSHOP_TOKEN_EXPIRES=600
+
+#用户名cookie有效时间 单位：s
+USERNAME_COOKIE_EXPIRES=60*60*24*7
+
+
+
+class HtmlTemplate(object):
+    """
+    项目 html网页模板路径汇总类
+    """
+
+    # 首页
+    INDEX_HTML = 'index.html'
+
+    """
+    用户登录模块
+    """
+    # 用户登录
+    LOGIN_HTML = 'users/login.html'
+
+    # 用户注册
+    REGISTER_HTML = 'users/register.html'
+
+    # 用户中心个人信息
+    USER_CENTER_INFO_HTML = 'users/user_center_info.html'
+
+    # 用户中心收货地址
+    USER_CENTER_ADDRESS_HTML = 'users/user_center_site.html'
+
+    # 用户中心订单页面
+    USER_CENTER_ORDER = 'users/user_center_order.html'
+
+    # 用户中心修改密码
+    USER_CENTER_PASS_HTML = 'users/user_center_pass.html'
+
+    """
+    OAuth 模块
+    """
+    # OAuth 第三方登录用户绑定
+    OAUTH_CALLBACK_HTML = 'oauth/oauth_callback.html'
+
+    """
+    商品模块
+    """
+    # 商品列表
+    GOODS_LIST_HTML = 'goods/list.html'
+
+    # 商品详情
+    GOODS_DETAIL_HTML = 'goods/detail.html'
+
+    """
+    全文检索模块
+    """
+    # 全文检索回调的 search.html
+    SEARCH_HTML = 'search/search.html'
+
+    """
+    购物车模块
+    """
+    # 购物车列表
+    CART_LIST_HTML = 'carts/cart.html'
+
+    """
+    订单模块
+    """
+    # 订单结算界面
+    ORDER_PLACE_HTML = 'orders/place_order.html'
+
+    # 订单提交成功页面
+    ORDER_SUCCESS_HTML = 'orders/order_success.html'
+
+    """
+    支付模块
+    """
+    # 订单支付成功页面
+    PAY_SUCCESS_HTML = 'payment/pay_success.html'
+
+    """
+    项目错误 html 模板
+    """
+    ERRORS_404_HTML = 'errors/404.html'
+
+
 class CookieKey(object):
     
     #用户名cookie

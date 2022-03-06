@@ -16,7 +16,7 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-# in gzy win BASE_DIR == G:\vscode\webproject
+# in gzy win BASE_DIR == G:\vscode\webproject\myshop
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -102,6 +102,8 @@ INSTALLED_APPS = [
     'corsheaders',
     #检索
     'haystack',
+    #定时任务
+    'django_crontab',
     #myshop     
     'myshop.apps.users',
     'myshop.apps.verifications',   
@@ -365,3 +367,12 @@ HAYSTACK_CONNECTIONS = {
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 # 用于决定每页显示数据条数: 
 HAYSTACK_SEARCH_RESULTS_PER_PAGE = 5
+
+#定时任务(windows下不能使用)
+CRONJOBS=[
+    #每分钟生成一次首页静态文件
+    ('*/1 * * * *','contents.crons.generate_static_index_html','>>'+os.path.join(BASE_DIR,'logs/crontab.log'))
+]
+
+# 指定中文编码格式
+CRONTAB_COMMAND_PREFIX = 'LANG_ALL=zh_cn.UTF-8'

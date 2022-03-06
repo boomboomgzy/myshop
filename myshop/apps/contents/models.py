@@ -5,7 +5,6 @@ from myshop.utils.models import ExtendModel
 class ContentCategory(ExtendModel):
     
     name=models.CharField(max_length=50,verbose_name='名称')
-    #key的作用？
     key=models.CharField(max_length=50,verbose_name='键名')
     
     class Meta:
@@ -18,7 +17,7 @@ class ContentCategory(ExtendModel):
     
 class Content(ExtendModel):
     
-    category=models.ForeignKey(ContentCategory,on_delete=models.PROTECT,verbose_name='类别')
+    category=models.ForeignKey(ContentCategory,related_name='contents',on_delete=models.PROTECT,verbose_name='类别')
     title=models.CharField(max_length=100,verbose_name='标题')
     url=models.CharField(max_length=300,verbose_name='链接')
     image=models.ImageField(null=True,verbose_name='图片')

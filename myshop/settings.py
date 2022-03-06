@@ -72,7 +72,7 @@ LOGGING = {
             # 日志文件的位置
             'filename': os.path.join(BASE_DIR,'logs/myshop.log'),
             'encoding': 'gbk',
-            'maxBytes': 30 * 1024,
+            'maxBytes': 1 * 1024,
             'backupCount': 10,
             'formatter': 'verbose'
         },
@@ -100,6 +100,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    #检索
     #myshop     
     'myshop.apps.users',
     'myshop.apps.verifications',   
@@ -334,5 +335,4 @@ BAIDU_REDIRECT_URI='http://localhost:8000/baidu/oauth_backend/'
 BAIDU_SCOPE='basic'
 #baidu登录页
 BAIDU_LOGIN_URL=f'https://openapi.baidu.com/oauth/2.0/authorize?response_type=CODE&client_id={BAIDU_API_KEY}&redirect_uri={BAIDU_REDIRECT_URI}&scope={BAIDU_SCOPE}'
-
 

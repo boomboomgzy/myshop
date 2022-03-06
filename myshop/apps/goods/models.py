@@ -163,7 +163,7 @@ class SKUImage(ExtendModel):
 class SKUSpecification(ExtendModel):
     
     # 对应的SKU值
-    sku = models.ForeignKey(SKU, on_delete=models.CASCADE, verbose_name='sku')
+    sku = models.ForeignKey(SKU, related_name='specs',on_delete=models.CASCADE, verbose_name='sku')
     # 对应哪一个规格
     spec = models.ForeignKey(GoodsSpecification, on_delete=models.PROTECT, verbose_name='规格名称')
     # 规格的具体内容

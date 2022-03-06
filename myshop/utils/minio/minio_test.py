@@ -9,12 +9,51 @@ from minio import Minio
 from minio.error import (ResponseError, BucketAlreadyOwnedByYou,
                          BucketAlreadyExists)
 from django.conf import settings
+import logging
+from myshop.utils.enums import StatusCodeEnum
+from myshop.utils.exceptions import BusinessException
+logger=logging.getLogger(settings.LOGGER_NAME)
 
+    
 # 使用endpoint、access key和secret key来初始化minioClient对象。
 minioClient = Minio(settings.MINIO_URL,
                     access_key=settings.MINIO_ACCESSKEY,
                     secret_key=settings.MINIO_SECRETKEY,
                     secure=False)
+#生成随机文件名
+
+def getRandomFileName(originname,prefix):
+    """
+    :parma originname:原文件名
+    :parma prefix:bucket内的路径
+    """
+    extend_name=originname.split('.')[1]
+    uuid=str(uuid.uuid1())
+    if prefix is not None:
+        return prefix+'/'+uuid+extend_name
+    else:
+        return uuid+extend_name
+    
+#文件上传
+def fileUpload(originname,prefix):
+    if originname is None :
+        raise BusinessException(StatusCodeEnum.NECESSARY_PARAM_ERR)   
+    save_filename=getRandomFileName(originname,prefix)
+    try:
+        minioClient.fput_object(settings.MINIO_BUCKETNAME,save_filename,originname)
+    except Exception as e:
+        logger.error(e)
+    else:
+        try:   
+            pass
+            #url=minioClient.presigned_get_object(settings.MINIO_BUCKETNAME,save_filename,MINIO_URL_EXPIERS)
+        except Exception as e:
+            logger.error(e)
+        else:
+            #return url 
+            pass 
+
+
 
 # 调用make_bucket来创建一个存储桶。
 try:

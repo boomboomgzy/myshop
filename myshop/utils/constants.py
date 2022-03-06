@@ -55,6 +55,7 @@ USERNAME_COOKIE_EXPIRES=60*60*24*7
 
 
 
+
 class HtmlTemplate(object):
     """
     项目 html网页模板路径汇总类

@@ -1,7 +1,7 @@
 import json
 
 from sqlalchemy import false, true
-from myshop.utils.random import random_str
+from myshop.utils.my_random import random_str
 from myshop.utils.constants import rongLianYun_accId,rongLianYun_accToken,rongLianYun_appId,rongLianYun_tid,SMS_CODE_REDIS_EXPIERS
 from ronglian_sms_sdk import SmsSDK
 

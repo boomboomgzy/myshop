@@ -20,6 +20,7 @@ from django.urls import include, path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/',include('myshop.apps.users.urls')),
+    path('search/', include('haystack.urls')),
     path('',include('myshop.apps.verifications.urls')),
     path('',include('myshop.apps.areas.urls')),
     path('',include('myshop.apps.payment.urls')),
@@ -27,5 +28,6 @@ urlpatterns = [
     path('',include('myshop.apps.carts.urls')),   
     path('',include('myshop.apps.oauth.urls')),
     path('',include('myshop.apps.goods.urls')),
+    path('',include('myshop.apps.contents.urls')),
     
 ]

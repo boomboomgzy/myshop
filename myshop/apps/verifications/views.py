@@ -3,7 +3,7 @@ from django.conf import settings
 from django.http import HttpResponse, JsonResponse
 from django.views import View
 from django_redis import get_redis_connection
-from myshop.utils.random import random_str
+from myshop.utils.my_random import random_str
 from myshop.utils.enums import StatusCodeEnum
 from .libs.captcha import captcha
 from myshop.utils.result import R

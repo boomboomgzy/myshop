@@ -72,7 +72,7 @@ LOGGING = {
             # 日志文件的位置
             'filename': os.path.join(BASE_DIR,'logs/myshop.log'),
             'encoding': 'gbk',
-            'maxBytes': 1 * 1024,
+            'maxBytes': 30 *1024*1024,
             'backupCount': 10,
             'formatter': 'verbose'
         },
@@ -101,6 +101,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     #检索
+    'haystack',
     #myshop     
     'myshop.apps.users',
     'myshop.apps.verifications',   
@@ -133,9 +134,26 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'myshop.urls'
 
 TEMPLATES = [
+        # jinja2 模板引擎
+    {
+        'BACKEND': 'django.template.backends.jinja2.Jinja2',  # 换成jinja2模板引擎
+        'DIRS': [os.path.join(BASE_DIR,'myshop','templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+
+            # 补充Jinja2模板引擎环境
+            'environment': 'myshop.utils.jinja2_env.jinja2_environment',
+        },
+    },
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'myshop','templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -336,3 +354,14 @@ BAIDU_SCOPE='basic'
 #baidu登录页
 BAIDU_LOGIN_URL=f'https://openapi.baidu.com/oauth/2.0/authorize?response_type=CODE&client_id={BAIDU_API_KEY}&redirect_uri={BAIDU_REDIRECT_URI}&scope={BAIDU_SCOPE}'
 
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.elasticsearch7_backend.Elasticsearch7SearchEngine',
+        'URL': 'http://192.168.9.102:9200/', # Elasticsearch服务器ip地址，端口号固定为9200
+        'INDEX_NAME': 'myshop', # Elasticsearch建立的索引库的名称
+    },
+}
+# 当添加、修改、删除数据时，自动生成索引
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+# 用于决定每页显示数据条数: 
+HAYSTACK_SEARCH_RESULTS_PER_PAGE = 5

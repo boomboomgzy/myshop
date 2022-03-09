@@ -5,5 +5,5 @@ app_name='contents'
 
 
 urlpatterns = [
-    path('contents/index/',views.IndexView.as_view(),name='contents_index'),
+    path('contents/index/',views.IndexView.as_view(),name='index'),
 ]

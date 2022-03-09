@@ -123,7 +123,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    #'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -175,10 +175,6 @@ WSGI_APPLICATION = 'myshop.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    #    'default': {
-    #    'ENGINE': 'django.db.backends.sqlite3',
-    #    'NAME': BASE_DIR / 'db.sqlite3',
-    #} 
         'default':{
         'ENGINE': 'django.db.backends.mysql',
         'HOST': '127.0.0.1',
@@ -188,8 +184,27 @@ DATABASES = {
         'NAME': 'myshop',
         }
 }
-
-
+#docker容器 主从数据库配置
+""" DATABASES = {
+    'default': { # 写（主机）
+        'ENGINE': 'django.db.backends.mysql', # 数据库引擎
+        'HOST': '127.0.0.1', # 数据库主机
+        'PORT': 3310, # 数据库端口
+        'USER': 'root', # 数据库用户名
+        'PASSWORD': '123456', # 数据库用户密码
+        'NAME': 'myshop' # 数据库名字
+    },
+    'slave': { # 读（从机）
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': '127.0.0.1',
+        'PORT': 3311,
+        'USER': 'root',
+        'PASSWORD': '123456',
+        'NAME': 'myshop'
+    }
+} 
+DATABASE_ROUTERS = ['myshop.utils.db_router.MasterSlaveDBRouter']
+"""
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -225,7 +240,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),'myshop','static')
 STATICFILES_DIRS=[os.path.join(BASE_DIR,'myshop','static')]
 
 DEFAULT_FILE_STORAGE='myshop.utils.minio.minio_storage.MinioStorage'
@@ -292,7 +307,7 @@ SESSION_CACHE_ALIAS = "session"
 #替换内置user
 AUTH_USER_MODEL='users.User'
 
-#CORS 白名单
+#CORS 配置
 
 CORS_ALLOWED_ORIGINS=(
     'http://127.0.0.1:8000',
@@ -301,8 +316,29 @@ CORS_ALLOWED_ORIGINS=(
 
 #允许携带cookie
 CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = True
 
-#CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_METHODS = (
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+    'VIEW',
+)
+ 
+CORS_ALLOW_HEADERS = (
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+)
 
 AUTHENTICATION_BACKENDS=['myshop.utils.backend.UserNameAndEmailBackend'] 
 

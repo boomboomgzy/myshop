@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>美多商城-商品详情</title>
+    <title>多多商城-商品详情</title>
     <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/static/css/main.css">
     <script type="text/javascript" src="/static/js/vue-2.5.16.js"></script>
@@ -13,31 +13,31 @@
 <div id="app">
     <div class="header_con">
         <div class="header" v-cloak>
-            <div class="welcome fl">欢迎来到美多商城!</div>
+            <div class="welcome fl">欢迎来到多多商城!</div>
             <div class="fr">
                 <div v-if="username" class="login_btn fl">
                     欢迎您：<em>[[ username ]]</em>
                     <span>|</span>
-                    <a href="/logout/">退出</a>
+                    <a href="/users/logout/">退出</a>
                 </div>
                 <div v-else class="login_btn fl">
-                    <a href="/login/">登录</a>
+                    <a href="/users/login/">登录</a>
                     <span>|</span>
-                    <a href="/register">注册</a>
+                    <a href="/users/register/">注册</a>
                 </div>
                 <div class="user_link fl">
                     <span>|</span>
-                    <a href="/info/">用户中心</a>
+                    <a href="/users/info/">用户中心</a>
                     <span>|</span>
                     <a href="/carts/">我的购物车</a>
                     <span>|</span>
-                    <a href="/orders/info/1/">我的订单</a>
+                    <a href="/orders/info/1">我的订单</a>
                 </div>
             </div>
         </div>
     </div>
     <div class="search_bar clearfix">
-        <a href="/" class="logo fl"><img src="/static/images/logo.png"></a>
+        <a href="/contents/index/" class="logo fl"><img src="/static/images/logo.png"></a>
         <div class="search_wrap fl">
             <form method="get" action="/search/" class="search_con">
                 <input type="text" class="input_text fl" name="q" placeholder="搜索商品">
@@ -1651,12 +1651,12 @@
         <a href="javascript:;">手机</a>
     </div>
     <div class="goods_detail_con clearfix">
-        <div class="goods_detail_pic fl"><img src="http://192.168.246.133:8888/group1/M00/00/02/CtM3BVrRdICAO_CRAAcPaeOqMpA2024091"></div>
+        <div class="goods_detail_pic fl"><img src="group1/M00/00/02/CtM3BVrRdICAO_CRAAcPaeOqMpA2024091"></div>
         <div class="goods_detail_list fr">
             <h3>华为 HUAWEI P10 Plus 6GB+64GB 钻雕蓝 移动联通电信4G手机 双卡双待</h3>
             <p>wifi双天线设计！徕卡人像摄影！P10徕卡双摄拍照，低至2988元！</p>
             <div class="price_bar">
-                <span class="show_pirce">¥<em>3388.00</em></span>
+                <span class="show_pirce">¥<em>{{ no such element: myshop.apps.goods.models.SKU object[&#39;price&#39;] }}</em></span>
                 <a href="javascript:;" class="goods_judge">18人评价</a>
             </div>
             <div class="goods_num clearfix">
@@ -1672,7 +1672,7 @@
                     <label>颜色:</label>
                     
                         
-                            <a href="/detail/9/">钻雕金</a>
+                            <a href="/detail/9">钻雕金</a>
                         
                     
                         
@@ -1680,11 +1680,11 @@
                         
                     
                         
-                            <a href="/detail/13/">玫瑰金</a>
+                            <a href="/detail/13">玫瑰金</a>
                         
                     
                         
-                            <a href="/detail/15/">曜石黑</a>
+                            <a href="/detail/15">曜石黑</a>
                         
                     
                 </div>
@@ -1697,7 +1697,7 @@
                         
                     
                         
-                            <a href="/detail/11/">128GB</a>
+                            <a href="/detail/11">128GB</a>
                         
                     
                 </div>
@@ -1731,20 +1731,6 @@
             <div @click="on_tab_content('detail')" class="tab_content" :class="tab_content.detail?'current':''">
                 <dl>
                     <dt>商品详情：</dt>
-                    <dd><p><img alt="" src="http://image.meiduo.site:8888/group1/M00/00/02/CtM3BVrRb2yAJ0cWADV9oDHhgG06294506" style="height:10460px; width:750px" /></p></dd>
-                </dl>
-            </div>
-            <div @click="on_tab_content('pack')" class="tab_content" :class="tab_content.pack?'current':''">
-                <dl>
-                    <dt>规格与包装：</dt>
-                    <dd><h3>包装清单</h3>
-
-<p>手机（含内置电池） x 1、大电流华为SuperCharge充电器 x 1、 USB数据线 x 1、半入耳式线控耳机 x 1、快速指南 x 1、三包凭证 x 1、取卡针 x 1、保护壳 x 1</p></dd>
-                </dl>
-            </div>
-            <div @click="on_tab_content('service')" class="tab_content" :class="tab_content.service?'current':''">
-                <dl>
-                    <dt>售后服务：</dt>
                     <dd><p>&nbsp;<strong>厂家服务</strong></p>
 
 <p>本产品全国联保，享受三包服务，质保期为：一年质保<br />
@@ -1768,6 +1754,20 @@
 <p>凭质保证书及京东商城发票，可享受全国联保服务（奢侈品、钟表除外；奢侈品、钟表由京东联系保修，享受法定三包售后服务），与您亲临商场选购的商品享受相同的质量保证。京东商城还为您提供具有竞争力的商品价格和<a href="https://help.jd.com/help/question-892.html" target="_blank">运费政策</a>，请您放心购买！&nbsp;<br />
 <br />
 注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解</p></dd>
+                </dl>
+            </div>
+            <div @click="on_tab_content('pack')" class="tab_content" :class="tab_content.pack?'current':''">
+                <dl>
+                    <dt>规格与包装：</dt>
+                    <dd><p><img alt="" src="http://image.meiduo.site:8888/group1/M00/00/02/CtM3BVrRb2yAJ0cWADV9oDHhgG06294506" style="height:10460px; width:750px" /></p></dd>
+                </dl>
+            </div>
+            <div @click="on_tab_content('service')" class="tab_content" :class="tab_content.service?'current':''">
+                <dl>
+                    <dt>售后服务：</dt>
+                    <dd><h3>包装清单</h3>
+
+<p>手机（含内置电池） x 1、大电流华为SuperCharge充电器 x 1、 USB数据线 x 1、半入耳式线控耳机 x 1、快速指南 x 1、三包凭证 x 1、取卡针 x 1、保护壳 x 1</p></dd>
                 </dl>
             </div>
             <div @click="on_tab_content('comment')" class="tab_content" :class="tab_content.comment?'current':''">
@@ -1798,13 +1798,13 @@
             <span>|</span>
             <a href="#">友情链接</a>
         </div>
-        <p>CopyRight © 2016 北京美多商业股份有限公司 All Rights Reserved</p>
+        <p>CopyRight © 2016 北京多多商业股份有限公司 All Rights Reserved</p>
         <p>电话：010-****888 京ICP备*******8号</p>
     </div>
 </div>
 <script type="text/javascript">
     let category_id = "115";
-    let sku_price = "3388.00";
+    let sku_price = "{{ no such element: myshop.apps.goods.models.SKU object[&#39;price&#39;] }}";
     let sku_id = "12";
 </script>
 <script type="text/javascript" src="/static/js/common.js"></script>

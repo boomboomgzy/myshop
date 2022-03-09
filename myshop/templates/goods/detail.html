@@ -31,7 +31,7 @@
                     <span>|</span>
                     <a href="{{ url('carts:info') }}">我的购物车</a>
                     <span>|</span>
-                    <a href="{{ url('orders:info', args=(1, )) }}">我的订单</a>
+                    <a href="{{ url('orders:user_order_info', args=(1, )) }}">我的订单</a>
                 </div>
             </div>
         </div>
@@ -109,7 +109,7 @@
         <a href="javascript:;">{{ breadcrumb.cat3.name }}</a>
     </div>
     <div class="goods_detail_con clearfix">
-        <div class="goods_detail_pic fl"><img src="{{ sku.default_image.url }}"></div>
+        <div class="goods_detail_pic fl"><img src="{{ sku.default_image_url }}"></div>
         <div class="goods_detail_list fr">
             <h3>{{ sku.name }}</h3>
             <p>{{ sku.caption }}</p>
@@ -168,19 +168,19 @@
             <div @click="on_tab_content('detail')" class="tab_content" :class="tab_content.detail?'current':''">
                 <dl>
                     <dt>商品详情：</dt>
-                    <dd>{{ sku.spu.desc_detail|safe }}</dd>
+                    <dd>{{ sku.goods.desc_detail|safe }}</dd>
                 </dl>
             </div>
             <div @click="on_tab_content('pack')" class="tab_content" :class="tab_content.pack?'current':''">
                 <dl>
                     <dt>规格与包装：</dt>
-                    <dd>{{ sku.spu.desc_pack|safe }}</dd>
+                    <dd>{{ sku.goods.desc_pack|safe }}</dd>
                 </dl>
             </div>
             <div @click="on_tab_content('service')" class="tab_content" :class="tab_content.service?'current':''">
                 <dl>
                     <dt>售后服务：</dt>
-                    <dd>{{ sku.spu.desc_service|safe }}</dd>
+                    <dd>{{ sku.goods.desc_service|safe }}</dd>
                 </dl>
             </div>
             <div @click="on_tab_content('comment')" class="tab_content" :class="tab_content.comment?'current':''">

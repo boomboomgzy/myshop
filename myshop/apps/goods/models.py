@@ -4,7 +4,7 @@ from myshop.utils.models import ExtendModel
 class GoodsCategory(ExtendModel):
     #货物有三个级别的分类
     name=models.CharField(max_length=10,verbose_name='名称')
-    parent=models.ForeignKey('self',null=True,on_delete=models.CASCADE,verbose_name='父类别')
+    parent=models.ForeignKey('self',null=True,related_name='subs',on_delete=models.CASCADE,verbose_name='父类别')
 
     class Meta:
         db_table='myshop_goods_category'
@@ -92,7 +92,7 @@ class GoodsSpecification(ExtendModel):
     #商品的规格 如：颜色、尺寸
     
     #该规格对应的商品
-    goods=models.ForeignKey(Goods,on_delete=models.CASCADE,verbose_name='商品')
+    goods=models.ForeignKey(Goods,related_name='specs',on_delete=models.CASCADE,verbose_name='商品')
     
     name=models.CharField(max_length=20,verbose_name='规格名称')
     
@@ -108,7 +108,7 @@ class GoodsSpecification(ExtendModel):
 class SpecificationOption(ExtendModel):
     #规格的选项 如：颜色的蓝色、红色
     
-    spec=models.ForeignKey(GoodsSpecification,on_delete=models.CASCADE,verbose_name='规格')
+    spec=models.ForeignKey(GoodsSpecification,related_name='options',on_delete=models.CASCADE,verbose_name='规格')
     value=models.CharField(max_length=20,verbose_name='选项值')
     
     class Meta:
@@ -125,7 +125,7 @@ class SKU(ExtendModel):
     name=models.CharField(max_length=50,verbose_name='商品名称')
     caption=models.CharField(max_length=100,verbose_name='副标题')
     #所属商品
-    goods=models.ForeignKey(Goods,on_delete=models.CASCADE,verbose_name='所属商品')
+    goods=models.ForeignKey(Goods,related_name='skus',on_delete=models.CASCADE,verbose_name='所属商品')
     category=models.ForeignKey(GoodsCategory,on_delete=models.PROTECT,verbose_name='类别')
     sale_price=models.DecimalField(max_digits=10,decimal_places=2,verbose_name='销售单价')
     cost_price=models.DecimalField(max_digits=10,decimal_places=2,verbose_name='成本单价')

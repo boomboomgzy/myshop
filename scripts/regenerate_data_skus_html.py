@@ -12,7 +12,7 @@ from django.conf import settings
 
 from myshop.apps.goods.models import SKU
 from myshop.utils.goods import get_breadcrumb,get_categories
-
+from myshop.utils.constants import HtmlTemplate
 
 def generate_html(sku_id):
     
@@ -29,7 +29,7 @@ def generate_html(sku_id):
             sku_key.append(spec.option.id)
 
         # 获取当前商品的所有SKU
-        skus = sku.spu.sku_set.all()
+        skus = sku.goods.skus.all()
         # 构建不同规格参数（选项）的sku字典
         spec_sku_map = {}
         for s in skus:
@@ -45,7 +45,7 @@ def generate_html(sku_id):
             spec_sku_map[tuple(key)] = s.id
 
         # 获取当前商品的规格信息
-        goods_specs = sku.spu.specs.order_by('id')
+        goods_specs = sku.goods.specs.order_by('id')
 
         # 若当前sku的规格信息不完整，则不再继续
         if len(sku_key) < len(goods_specs):
@@ -70,10 +70,10 @@ def generate_html(sku_id):
             'specs': goods_specs,
         }
 
-        template = loader.get_template('detail.html')
+        template = loader.get_template(HtmlTemplate.GOODS_DETAIL_HTML)
         html_text = template.render(context)
-        file_path = os.path.join(settings.STATICFILES_DIRS[0], 'detail/'+str(sku_id)+'.html')
-        with open(file_path, 'w') as f:
+        file_path = os.path.join(settings.STATICFILES_DIRS[0], 'details/'+str(sku_id)+'.html')
+        with open(file_path, 'w',encoding='utf-8') as f:
             f.write(html_text)
             
 if __name__ == '__main__':

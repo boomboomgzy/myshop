@@ -33,7 +33,7 @@ let vm = new Vue({
         // 初始化购物车数据并渲染界面
         render_carts(){
             // 渲染界面
-            this.carts = JSON.parse(JSON.stringify(carts));
+            this.carts =JSON.parse(JSON.stringify(this.carts));
             for(let i=0; i<this.carts.length; i++){
                 if(this.carts[i].selected=='True'){
                     this.carts[i].selected=true;
@@ -68,21 +68,19 @@ let vm = new Vue({
         // 减少操作
         on_minus(index){
             if (this.carts[index].count > 1) {
-                let count = this.carts[index].count - 1;
-                // this.carts[index].count = count; // 本地测试
+                let count = parseInt(this.carts[index].count) - 1;
                 this.update_count(index, count); // 请求服务器
             }
         },
         // 增加操作
         on_add(index){
             let count = 1;
-            if (this.carts[index].count < 5) {
-                count = this.carts[index].count + 1;
+            if (this.carts[index].count < this.carts[index].stock) {
+                count = parseInt(this.carts[index].count) + 1;
             } else {
-                count = 5;
+                count = parseInt(this.carts[index].stock);
                 alert('超过商品数量上限');
             }
-            // this.carts[index].count = count; // 本地测试
             this.update_count(index, count); // 请求服务器
         },
         // 数量输入框输入操作
@@ -90,13 +88,13 @@ let vm = new Vue({
             let count = parseInt(this.carts[index].count);
             if (isNaN(count) || count <= 0) {
                 count = 1;
-            } else if (count > 5) {
-                count = 5;
+            } else if (count > parseInt(this.carts[index].stock)) {
+                count = parseInt(this.carts[index].stock);
                 alert('超过商品数量上限');
             }
             this.update_count(index, count); // 请求服务器
         },
-        // 更新购物车
+        // 更新购物车数量数据
         update_count(index, count){
             let url = '/carts/';
             axios.put(url, {
@@ -113,7 +111,7 @@ let vm = new Vue({
                 .then(response => {
                     if (response.data.code == '0') {
                         // this.carts[index].count = response.data.cart_sku.count; // 无法触发页面更新
-                        Vue.set(this.carts, index, response.data.cart_sku); // 触发页面更新
+                        Vue.set(this.carts, index, response.data.data.cart_sku); // 触发页面更新
                         // 重新计算界面的价格和数量
                         this.compute_total_selected_amount_count();
                         this.compute_total_count();
@@ -146,7 +144,7 @@ let vm = new Vue({
             })
                 .then(response => {
                     if (response.data.code == '0') {
-                        this.carts[index].selected = response.data.cart_sku.selected;
+                        this.carts[index].selected = response.data.data.cart_sku.selected;
                         // 重新计算界面的价格和数量
                         this.compute_total_selected_amount_count();
                         this.compute_total_count();

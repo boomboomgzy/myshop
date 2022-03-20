@@ -14,8 +14,7 @@ celery_app.config_from_object('celery_tasks.config')
 #配置celery异步任务
 task_packages=[
     'celery_tasks.sms',
-    #'celery_tasks.email',
-    #'celery_tasks.static_file',
+    'celery_tasks.email',
 ]
 celery_app.autodiscover_tasks(packages=task_packages)
 

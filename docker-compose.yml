@@ -1,0 +1,108 @@
+ version: "3"
+ 
+ volumes: # 自定义数据卷，位于宿主机/var/lib/docker/volumes内
+  myshop_db_vol:
+  myshop_redis_vol:
+  myshop_media_vol:
+  myshop_minio_vol:
+  
+ services:
+  elasticsearch:
+    image: elasticsearch:7.17.0
+    privileged: true
+    environment:
+       - "discovery.type=single-node"
+       - http.cors.enabled=true
+       - http.cors.allow-origin=*
+    volumes:    
+      - ./compose/elasticsearch/data/:/usr/share/elasticsearch/data
+      - ./compose/elasticsearch/logs/:/usr/share/elasticsearch/logs
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    restart: always
+  minio:
+    image: minio/minio
+    volumes:
+       - ./compose/minio/data:/data
+       - ./compose/minio/config:/root/.minio
+    environment:
+       - MINIO_ACCESS_KEY=minio
+       - MINIO_SECRET_KEY=minio@123
+    ports:
+       - "9000:9000"
+       - "9001:9001"
+    command: server --console-address ':9001' /data
+    privileged: true
+    restart: always
+    
+  redis:
+    image: redis:5
+    command: redis-server /etc/redis/redis.conf # 容器启动后启动redis服务器
+    volumes:
+       - myshop_redis_vol:/data 
+       - ./compose/redis/redis.conf:/etc/redis/redis.conf 
+    ports:
+       - "6379:6379"
+    restart: always # always表容器运行发生错误时一直重启
+ 
+  db:
+    image: mysql:8.0.23
+    environment:
+       - MYSQL_ROOT_PASSWORD=1 
+       - MYSQL_DATABASE=myshop
+       - MYSQL_USER=gzy 
+       - MYSQL_PASSWORD=1      
+       - AUTO_RUN_DIR=/docker-entrypoint-initdb.d
+       - INIT_SQL=init.sql
+    volumes:
+       - myshop_db_vol:/var/lib/mysql:rw # 挂载数据库数据, 可读可写
+       - ./compose/mysql/config:/etc/mysql/conf.d # 挂载配置文件
+       - ./compose/mysql/init:/docker-entrypoint-initdb.d/ # 挂载数据初始化sql脚本
+       - ./compose/mysql/mysql-files:/var/lib/mysql-files
+    ports:
+       - "3316:3306" # 与配置文件保持一致
+    restart: always
+    command: 
+      --default-authentication-plugin=mysql_native_password
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_general_ci
+      --explicit_defaults_for_timestamp=true
+      --lower_case_table_names=1
+ 
+  web:
+    build: ./myshop 
+    expose:
+       - "8000"
+    volumes:
+       - ./myshop:/var/www/html/myshop 
+       - myshop_media_vol:/var/www/html/myshop/media 
+       - ./compose/uwsgi:/uwsgi
+    links:
+       - db
+       - redis
+    depends_on:
+       - db
+       - redis
+    environment:
+       - DEBUG=False
+    restart: always
+    tty: true
+    stdin_open: true
+
+  nginx:
+    build: ./compose/nginx
+    ports:
+       - "80:80"
+       - "443:443"
+    expose:
+       - "80"
+    volumes:
+       - ./myshop/static:/usr/share/nginx/html/static 
+       - ./compose/nginx/ssl:/usr/share/nginx/ssl 
+       - ./compose/nginx/log:/var/log/nginx 
+       - myshop_media_vol:/usr/share/nginx/html/media
+       - ./compose/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+    depends_on:
+       - web
+    restart: always

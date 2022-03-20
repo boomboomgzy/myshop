@@ -1,7 +1,5 @@
-from attrs import setters
-from celery import Celery
 from django.conf import settings
-from myshop.celery_tasks.main import celery_app
+from celery_tasks.main import celery_app
 from .ronglianyun import send_sms_code
 import logging
 

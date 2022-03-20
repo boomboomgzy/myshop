@@ -1,5 +1,5 @@
 from django.core.mail import send_mail
-from myshop.celery_tasks.main import celery_app
+from celery_tasks.main import celery_app
 import logging
 from django.conf import settings
 
@@ -15,6 +15,7 @@ def celery_send_verify_email(self,email,verify_url):
     try:
         send_mail(
             subject=subject,
+            message='',
             html_message=html_message,
             from_email=settings.EMAIL_FROM,
             recipient_list=[email],
